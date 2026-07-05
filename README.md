@@ -18,6 +18,9 @@ Not a chatbot. Not a coding tool. An operating system for running a company of o
 - 🧪 **Experiment mode.** The Karpathy autoresearch pattern, applied to your business. "Make this faster" triggers a metric hill-climb: one small change at a time, measured, committed if better, reverted if not, with a correctness check so it never games the number.
 - 👥 **The Panel.** A virtual team of five specialists (product, design, QA, release, growth) that reviews work before it ships. Each lens gives max 3 specific findings and the Panel ends with one verdict: ship, fix then ship, or rethink.
 - 📋 **Staged builds.** Bigger projects get a written plan with small verifiable tasks, executed one at a time with tests before code. The plan file is the state, so any session (or model) can resume the build mid-way.
+- 🔎 **Recall without a database.** Ask "what did we decide about pricing?" and it greps memory with synonyms it generates itself, then answers with source and date. Semantic search, zero dependencies. Git doubles as the memory history viewer: every fact it ever learned is a diff you can audit.
+- 🧳 **Portable by design.** One command exports your entire cofounder (memory, vault, skills) as a bundle, secrets excluded and verified. Import your Obsidian vault or Notion export on day one. Move machines without losing a single memory.
+- 🏁 **Starter templates.** SaaS, creator, and agency skeletons that pre-shape your venture profile, vault taxonomy, and the numbers that matter for your business type.
 
 ## Requirements
 
@@ -50,9 +53,10 @@ From then on, every session starts with it reading its memory. Try:
 ```
 shotgun/
 ├── CLAUDE.md          # The operating loop: read every session, followed exactly
-├── skills/            # Workflows: onboard, build, organize-data, decide, daily, loop, experiment, review (+ learned/)
+├── skills/            # Workflows: onboard, build, organize-data, decide, daily, loop, experiment, review, port (+ learned/)
 ├── memory/            # The compounding asset: profile, venture, decisions, loops, journal
 ├── vault/             # Your organized business data, indexed and canonical
+├── templates/         # Starter shapes: SaaS, creator, agency
 ├── workspace/         # Code projects the agent builds
 └── docs/              # Architecture
 ```

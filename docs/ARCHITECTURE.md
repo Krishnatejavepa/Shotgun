@@ -9,7 +9,8 @@
 │  CLAUDE.md: the operating loop           │  ← the contract; deterministic checklists
 ├──────────────────────────────────────────┤
 │  skills/: workflow modules               │  ← onboard, build, organize-data,
-│    (+ skills/learned/: self-written)     │    decide, daily, loop, experiment
+│    (+ skills/learned/: self-written)     │    decide, daily, loop, experiment,
+│                                          │    review, port
 ├──────────────────────────────────────────┤
 │  State (plain markdown + git)            │
 │    memory/    what the cofounder knows   │
@@ -24,7 +25,7 @@ The single biggest design constraint: **the loop must run identically on any cap
 
 1. **MUST-marked checklists, not judgment calls.** "Read memory/MEMORY.md at session start. MUST." leaves nothing to model personality.
 2. **Numbered sequences with explicit ordering.** Weaker models follow sequences reliably; only interpretation varies, so interpretation is minimized.
-3. **Exact request classification.** Every founder message maps to exactly one of five classes (QUICK/BUILD/ORGANIZE/DECIDE/DAILY), each with its own skill file. No ambient behavior.
+3. **Exact request classification.** Every founder message maps to exactly one of nine classes (QUICK/BUILD/ORGANIZE/PORT/DECIDE/DAILY/LOOP/EXPERIMENT/REVIEW), each with its own skill file. No ambient behavior.
 4. **State in files, not in context.** The model can be swapped mid-week; the new model reads the same memory and continues. Nothing important lives only in a conversation.
 5. **Self-verification steps.** "Run the code before delivering", "announce every memory save", outputs are checkable, so drift is visible and correctable.
 
@@ -44,4 +45,8 @@ The single biggest design constraint: **the loop must run identically on any cap
 
 ## Extension model
 
-A skill = one folder + one SKILL.md with frontmatter (name, description). The description tells the agent when to trigger it. Community skills drop in without touching the core loop; only new *request classes* require a one-line addition to CLAUDE.md §2.
+A skill = one folder + one SKILL.md with frontmatter (name, description, version). The description tells the agent when to trigger it; a `## Verify` section makes it self-testing. Community skills drop in without touching the core loop; only new *request classes* require a one-line addition to CLAUDE.md §2. Related skills ship together as packs (CONTRIBUTING.md), and starter templates in `templates/` extend onboarding per vertical without touching the onboard skill.
+
+## Portability model
+
+The cofounder is a folder. `skills/port` exports it as a verified bundle (secrets excluded), imports Obsidian/Notion brains through the vault with human-reviewed memory proposals, and merges two Shotgun memories with per-conflict founder decisions. Nothing about the design assumes this machine, this model, or this vendor.

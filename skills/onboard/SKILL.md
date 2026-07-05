@@ -33,6 +33,10 @@ Save each answer immediately. Confirm the completed profile back in 5 lines.
 
 Fill `memory/venture.md`: product, customers, revenue model, current top 3 priorities, biggest risk. Get this from conversation, not interrogation, infer what you can from Phase 1 and only ask what's missing.
 
+If the venture clearly matches a starter in `templates/` (SaaS, creator, agency), use that template's skeleton and vault taxonomy as the starting shape, it front-loads the questions that matter for that business type. No match = plain template, never force a fit.
+
+If the founder mentions an existing Obsidian vault, Notion workspace, or a previous Shotgun copy, run the import flow from `skills/port/SKILL.md` as part of Phase 3.
+
 ## Phase 3: The Data Rescue (deliver value NOW)
 
 1. Ask: "Where does your project stuff currently live? Point me at folders, files, spreadsheets, anything scattered."

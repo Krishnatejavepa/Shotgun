@@ -15,7 +15,8 @@ Solo founders have no team rituals. You are the ritual.
    - **Open:** loops that matter today, oldest-first (2–3 lines)
    - **Today's ONE thing:** the single task that most advances the top priority, with a one-line why
    - **Also, if time:** max 2 smaller items
-3. If an open loop has been open for more than 7 days, flag it: finish it, kill it, or consciously park it. Zombie loops drain founders.
+3. If any `LOOP:` registry lines exist in open-loops.md, add one line: **Running loops:** each loop's status and progress from its LOOP.md (e.g., "scraper-fix 6/10 iterations, circling on auth"). Blocked loops go first; they're waiting on the founder.
+4. If an open loop has been open for more than 7 days, flag it: finish it, kill it, or consciously park it. Zombie loops drain founders.
 
 ## "How's it going" / weekly review → Review (run max once a week)
 
@@ -23,6 +24,8 @@ Solo founders have no team rituals. You are the ritual.
 2. Output: shipped (list), decided (list), still open (list), and ONE honest observation a cofounder would make, pattern-level, e.g., "Three weeks on features, zero on distribution. Worried about that."
 3. Ask: "Anything change in priorities?" → update `memory/venture.md` if yes.
 4. Self-retro (CLAUDE.md §9.5): scan `memory/feedback.md` for repeated corrections; if any has occurred twice, propose ONE skill-file edit that would prevent it. Also flag any learned skill that failed during reuse this week.
+5. Pulse (4 numbers, one line each, from changelog/journal/git): shipped this week, loops run (done vs blocked), experiments kept vs reverted, learned skills added or repaired. Numbers over adjectives; a founder should see momentum or its absence at a glance.
+6. Housekeeping check: if `memory/MEMORY.md` exceeds ~50 lines run the consolidation routine, if `memory/journal.md` exceeds ~60 lines run the journal roll-up (both in `memory/README.md`).
 
 ## Focus protection
 

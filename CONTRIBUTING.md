@@ -8,13 +8,23 @@ Thanks for wanting to make Shotgun better. Two ground rules keep this project wh
 ## What we want most
 
 - **New skills.** Vertical workflows for specific founder types: e-commerce, agency, indie hacker, content business. One folder, one SKILL.md, frontmatter with clear trigger phrases. Look at `skills/decide/SKILL.md` for the shape.
+- **Starter templates.** New verticals for `templates/` (see the three existing ones for the shape: venture skeleton, vault taxonomy, numbers that matter, typical first loops).
 - **War stories.** Open an issue describing where the agent broke the loop or produced something dumb. Real transcripts (redacted) are gold.
 - **Docs fixes.** Anything that confused you will confuse others.
+
+## Skill standard (what a PR'd skill must have)
+
+1. Frontmatter: `name`, `description` containing the exact trigger phrases, `version: 1`.
+2. Numbered steps a weaker model can follow without judgment calls.
+3. A `## Verify` section: a checkable way to confirm the skill worked (a command, a file that must exist, an observable output).
+4. Nothing that automates judgment or skips a confirmation gate, those get declined on sight.
+
+Related skills can ship together as a **pack**: one folder per skill plus a `PACK.md` listing what's inside and the founder type it serves. Propose packs as an issue first.
 
 ## How
 
 1. Fork, branch, PR. Small PRs get reviewed fast, big rewrites should start as an issue.
-2. Test your skill by actually running it with Claude Code in a scratch copy, and say in the PR what model you tested on.
+2. Test your skill by actually running it with Claude Code in a scratch copy, and say in the PR what model you tested on and what the `## Verify` output was.
 3. Writing style everywhere: no em dashes, no filler, short sentences. The style contract in CLAUDE.md §8 applies to docs too.
 
 ## What we'll decline

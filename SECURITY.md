@@ -14,6 +14,8 @@ Always-on personal AI agents have earned real security criticism: daemons with b
 - **Everything is inspectable.** You can read every fact your agent has stored and delete any of it with a text editor. No hidden state.
 - **Secrets never enter memory or the vault.** API keys and credentials live only in `.env` files, which are gitignored by default. The loop forbids the agent from writing secrets into memory files.
 - **Git is your audit log.** Every memory change is a diff. `git log -p memory/` shows you exactly what your agent learned and when.
+- **External actions leave a written trail.** Every confirmed irreversible action (a send, a deploy, a purchase, a deletion) gets a `[external]`-tagged line in `memory/changelog.md` with the date and what happened. You can reconstruct everything your agent ever did outside the repo from one file.
+- **Backups never contain secrets.** The export bundle (`skills/port`) excludes `.env` by contract and verifies the exclusion before reporting done.
 
 ## Injection surfaces that DO exist (and mitigations)
 

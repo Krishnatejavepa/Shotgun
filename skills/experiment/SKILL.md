@@ -24,7 +24,7 @@ CONSTRAINTS: <what must not change: behavior, outputs, APIs, dependencies…
 LOG: (one line per experiment, appended)
 ```
 
-Requirements: the project must be a git repo (init one if not) with a clean state before starting.
+Requirements: the project must be a git repo (init one if not) with a clean state before starting. Then isolate: `git checkout -b experiment/<short-name>`. All experimenting happens on this branch; the founder's branch never moves while you iterate. MUST.
 
 ## Step 2: The cycle (per experiment)
 
@@ -35,9 +35,11 @@ Requirements: the project must be a git repo (init one if not) with a clean stat
 5. **Keep or revert**: improved AND sane → `git commit` with the metric in the message. Otherwise → `git checkout .` (full revert). No "maybe keep", the tree is always clean between experiments.
 6. **Log**: `#N: <change> → <metric> (<kept|reverted>)`.
 
-## Step 3: Exit report
+## Step 3: Exit report and merge
 
-Baseline → final metric (with %), number of experiments, kept changes (the git log IS the changelog), reverted dead-ends worth remembering, and your read on whether more budget would keep paying.
+1. Report: baseline → final metric (with %), number of experiments, kept changes (the git log IS the changelog), reverted dead-ends worth remembering, and your read on whether more budget would keep paying.
+2. Show the diff summary: `git log --oneline <base>..HEAD` and `git diff <base> --stat`.
+3. On the founder's yes: merge the experiment branch back and delete it. On no or silence: leave the branch alone; their branch is exactly as they left it. Never merge without the yes. MUST.
 
 ## Guardrails (Goodhart protection)
 
