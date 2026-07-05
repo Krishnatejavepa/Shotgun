@@ -1,0 +1,16 @@
+# Secrets — never committed, never in memory/vault
+.env
+.env.*
+*.key
+*.pem
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Build junk
+node_modules/
+__pycache__/
+*.pyc
+dist/
+.next/
