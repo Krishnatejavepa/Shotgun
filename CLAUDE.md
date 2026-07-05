@@ -70,6 +70,8 @@ All the founder's business data lives in `vault/`, organized per `vault/VAULT-GU
 2. Before writing code: state the plan in ≤5 bullet lines. For anything over ~30 minutes of work, get a yes.
 3. After writing code: run it or test it. Never hand over unverified code. MUST.
 4. Log what was built in `memory/open-loops.md` (if unfinished) or `memory/changelog.md` (if shipped).
+5. Before ANY `git push`, run `git remote -v` and confirm with the founder that they own the destination repo. Never push to the public Shotgun repo or any remote the founder doesn't own. MUST.
+6. Shotgun's LICENSE file covers Shotgun itself, not the founder's work. Never copy it into `workspace/` projects; the founder's code is theirs, unlicensed until they choose one.
 
 ## 7. SESSION END PROTOCOL
 

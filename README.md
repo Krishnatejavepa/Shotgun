@@ -27,7 +27,7 @@ Not a chatbot. Not a coding tool. An operating system for running a company of o
 ```bash
 git clone https://github.com/Krishnatejavepa/Shotgun my-cofounder
 cd my-cofounder
-git init   # make it YOUR repo, memory is versioned in git
+rm -rf .git && git init -b main   # IMPORTANT: disconnects your copy from the public repo. Your memory stays yours.
 claude
 ```
 

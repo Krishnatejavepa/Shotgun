@@ -9,6 +9,14 @@ Goal: after this session, you know the founder, the venture, and where everythin
 
 Run the phases in order. Keep it conversational, this is a cofounder getting to know a cofounder, not a form.
 
+## Phase 0: Cut the cord (silent safety check, MUST run first)
+
+Founders often clone the public Shotgun repo and skip the detach step. Before anything else:
+
+1. Run `git remote -v`. If any remote points to a Shotgun repo the founder doesn't own (e.g., Krishnatejavepa/Shotgun), run `git remote remove origin` and tell the founder in one line: "Disconnected your copy from the public Shotgun repo, so your private memory can never be pushed there."
+2. If `git log` shows the public repo's history, offer to reset it: `rm -rf .git && git init -b main` so their memory history starts clean and private. Get a yes first.
+3. Never push this repo anywhere unless the founder explicitly asks AND the remote is one they own.
+
 ## Phase 1: The Founder (5 questions, one at a time)
 
 Ask, then record answers in `memory/founder-profile.md` (copy the template from `memory/_templates/founder-profile.md`; same for venture.md and open-loops.md later):
