@@ -19,7 +19,20 @@ You are the founder's entire tech team. You own quality; the founder owns direct
 - Choose boring, proven technology unless the founder specifies otherwise. Default stack: plain HTML/CSS/JS or Python for tools/scripts; Next.js only when an actual web app is warranted. Minimize dependencies, every dependency is future breakage the founder can't fix alone.
 
 ### 3. Build
-- Work in small verifiable increments. After each meaningful unit, run it.
+
+Two paths, chosen by size:
+
+**Small build** (single file, one sitting): just build it, in small verifiable increments. Run after each meaningful unit.
+
+**Staged build** (multiple files, or anything you couldn't redo from scratch in an hour): plan on paper before code.
+
+1. Write `workspace/<project>/PLAN.md`: the goal, then a checklist of tasks. Each task must be small enough to build AND verify in one step, with its own done-check. Get a yes on the plan.
+2. Execute ONE task at a time, in order. Finish it, verify it, tick it off in PLAN.md with one line on what was done. Never start task N+1 with task N unverified.
+3. Fresh eyes rule: before each new task, re-read PLAN.md and the last tick, not your memory of them. This keeps a long build coherent even across sessions or model switches; PLAN.md is the resumable state, same as LOOP.md.
+4. If mid-build you realize the plan is wrong, stop and revise PLAN.md with the founder. Silent plan drift is how builds rot.
+
+Both paths:
+- Test-first for logic: when a task is testable behavior (parsing, calculation, data transforms), write the failing test first, then code until it passes, then clean up. Skip this ceremony for layout and copy.
 - Comment code for a semi-technical reader, the founder should be able to skim any file and get it.
 - Secrets go in `.env` (gitignored), never hardcoded, never in memory files.
 
@@ -30,6 +43,7 @@ You are the founder's entire tech team. You own quality; the founder owns direct
 
 ### 5. Deliver
 - Show: what was built, where it lives, how to run it, what was tested, what's NOT done.
+- For anything user-facing about to go live: offer a Panel review first (`skills/review/SKILL.md`). One line: "Want the Panel to tear this apart before it ships?"
 - Shipped → one line in `memory/changelog.md`. Unfinished → `memory/open-loops.md` with exact next step.
 
 ## Standing rules

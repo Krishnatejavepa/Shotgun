@@ -16,6 +16,8 @@ Not a chatbot. Not a coding tool. An operating system for running a company of o
 - 📈 **Learned skills.** When a multi-step task gets figured out, Shotgun saves the procedure and reuses it. It gets faster at your business every week and repairs its own skills when they break.
 - 🔁 **Autonomous loops.** Say "keep going until it works" and walk away. Shotgun writes a loop contract (goal, checkable done-condition, iteration budget), cycles act, verify, fix, and exits with either verified-done or a precise blocker report. Loop state lives in a file, so any session can resume it.
 - 🧪 **Experiment mode.** The Karpathy autoresearch pattern, applied to your business. "Make this faster" triggers a metric hill-climb: one small change at a time, measured, committed if better, reverted if not, with a correctness check so it never games the number.
+- 👥 **The Panel.** A virtual team of five specialists (product, design, QA, release, growth) that reviews work before it ships. Each lens gives max 3 specific findings and the Panel ends with one verdict: ship, fix then ship, or rethink.
+- 📋 **Staged builds.** Bigger projects get a written plan with small verifiable tasks, executed one at a time with tests before code. The plan file is the state, so any session (or model) can resume the build mid-way.
 
 ## Requirements
 
@@ -41,13 +43,14 @@ From then on, every session starts with it reading its memory. Try:
 - `"Should I do lifetime deals or subscriptions?"` gets a structured decision, recorded with a revisit trigger
 - `"Fix this scraper, keep going until it runs clean"` runs alone and reports verified-done or the exact blocker
 - `"Make my site load faster"` runs 20 measured experiments, each kept or reverted by the numbers
+- `"Is this landing page ready?"` convenes the Panel: five specialist reviews and one verdict
 
 ## How it works
 
 ```
 shotgun/
 ├── CLAUDE.md          # The operating loop: read every session, followed exactly
-├── skills/            # Workflows: onboard, build, organize-data, decide, daily, loop, experiment (+ learned/)
+├── skills/            # Workflows: onboard, build, organize-data, decide, daily, loop, experiment, review (+ learned/)
 ├── memory/            # The compounding asset: profile, venture, decisions, loops, journal
 ├── vault/             # Your organized business data, indexed and canonical
 ├── workspace/         # Code projects the agent builds

@@ -27,9 +27,10 @@ For every founder request, classify it as exactly one of:
 - **BUILD**: coding, technical work, creating something. Follow `skills/build/SKILL.md`.
 - **ORGANIZE**: anything about files, data, cleanup, "where is X". Follow `skills/organize-data/SKILL.md`.
 - **DECIDE**: strategic choices, prioritization, "should I". Follow `skills/decide/SKILL.md`.
-- **DAILY**: standup, planning, review, "what's next". Follow `skills/daily/SKILL.md`.
+- **DAILY**: standup, planning, weekly progress check-in, "what's next", "how's it going". Follow `skills/daily/SKILL.md`. (Critique of a specific piece of work is REVIEW, not DAILY.)
 - **LOOP**: delegated autonomous work toward a done-condition: "loop on this", "keep going until it works". Follow `skills/loop/SKILL.md`.
 - **EXPERIMENT**: metric optimization with no finish line: "make X faster/better/cheaper", "optimize this". Follow `skills/experiment/SKILL.md`.
+- **REVIEW**: critique before shipping: "review this", "is this ready", "tear this apart". Follow `skills/review/SKILL.md`.
 
 If the request is ambiguous between two classes, ask ONE clarifying question, then classify. Never ask more than two questions before starting work.
 
