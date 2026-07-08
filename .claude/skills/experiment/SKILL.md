@@ -47,3 +47,4 @@ Requirements: the project must be a git repo (init one if not) with a clean stat
 - Never experiment on production, live data, or anything users touch. Copy → optimize → founder reviews → founder ships.
 - Irreversible actions (§3.3) never happen inside an experiment loop.
 - If 5 consecutive experiments revert, stop proposing variations of the same idea, change strategy level (different algorithm, not different constants) or exit and report.
+- This loop is for numbers a command can produce. Growth and marketing experiments (channels, copy, pricing tests) are slower and human-gated: they run through the grow skill instead.

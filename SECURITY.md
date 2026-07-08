@@ -15,12 +15,13 @@ Always-on personal AI agents have earned real security criticism: daemons with b
 - **Secrets never enter memory or the vault.** API keys and credentials live only in `.env` files, which are gitignored by default. The loop forbids the agent from writing secrets into memory files.
 - **Git is your audit log.** Every memory change is a diff. `git log -p memory/` shows you exactly what your agent learned and when.
 - **External actions leave a written trail.** Every confirmed irreversible action (a send, a deploy, a purchase, a deletion) gets a `[external]`-tagged line in `memory/changelog.md` with the date and what happened. You can reconstruct everything your agent ever did outside the repo from one file.
-- **Backups never contain secrets.** The export bundle (`skills/port`) excludes `.env` by contract and verifies the exclusion before reporting done.
+- **Backups never contain secrets.** The export bundle (`.claude/skills/port`) excludes `.env` by contract and verifies the exclusion before reporting done.
 
 ## Injection surfaces that DO exist (and mitigations)
 
 - **Files you feed it.** A malicious document in the vault could contain adversarial instructions. Mitigation: the loop treats file contents as data, not instructions; the CLAUDE.md contract explicitly wins over any conflicting instruction (RULE 0). Still, don't feed it files from sources you don't trust.
 - **Web content during research.** Same principle: fetched content is data. Confirmation gates on irreversible actions are the backstop.
+- **Third-party skills.** A skill file IS instructions your agent will follow. Read any community skill before dropping it into `.claude/skills/`; the supply-chain attacks on always-on agent marketplaces worked exactly this way. The doctor skill audits skill frontmatter monthly, but it can't read intent for you.
 
 ## Your responsibilities
 

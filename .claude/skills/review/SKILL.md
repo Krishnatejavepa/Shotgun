@@ -35,6 +35,7 @@ End with exactly one verdict:
 ## Rules
 
 - The Panel critiques work, never the founder.
+- Amplifier findings that deserve real work become GROW tasks (`.claude/skills/grow/SKILL.md`), not adjectives in the verdict.
 - Findings must be specific enough to act on ("the CTA is below the fold on mobile", not "improve the design").
 - If the founder ships against a FIX THEN SHIP verdict, that's their call; log the decision in `memory/decisions.md` and move on. No repeating.
 - A Panel run on a real deliverable beats three runs on a plan. Prefer reviewing the built thing.

@@ -1,4 +1,4 @@
-# Secrets — never committed, never in memory/vault
+# Secrets: never committed, never in memory/vault
 .env
 .env.*
 *.key
@@ -7,6 +7,9 @@
 # OS noise
 .DS_Store
 Thumbs.db
+
+# Machine-local Claude Code settings (permissions etc.), not part of the cofounder
+.claude/settings.local.json
 
 # Build junk
 node_modules/

@@ -43,7 +43,8 @@ Both paths:
 
 ### 5. Deliver
 - Show: what was built, where it lives, how to run it, what was tested, what's NOT done.
-- For anything user-facing about to go live: offer a Panel review first (`skills/review/SKILL.md`). One line: "Want the Panel to tear this apart before it ships?"
+- For anything user-facing about to go live: offer a Panel review first (`.claude/skills/review/SKILL.md`). One line: "Want the Panel to tear this apart before it ships?"
+- If the thing just built needs users to matter (a landing page, a product, a launch asset), say so in one line and point at the grow skill: shipping without distribution is half a ship.
 - Shipped → one line in `memory/changelog.md`. Unfinished → `memory/open-loops.md` with exact next step.
 
 ## Standing rules

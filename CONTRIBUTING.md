@@ -7,8 +7,8 @@ Thanks for wanting to make Shotgun better. Two ground rules keep this project wh
 
 ## What we want most
 
-- **New skills.** Vertical workflows for specific founder types: e-commerce, agency, indie hacker, content business. One folder, one SKILL.md, frontmatter with clear trigger phrases. Look at `skills/decide/SKILL.md` for the shape.
-- **Starter templates.** New verticals for `templates/` (see the three existing ones for the shape: venture skeleton, vault taxonomy, numbers that matter, typical first loops).
+- **New skills.** Vertical workflows for specific founder types: indie hacker, mobile apps, local services, marketplaces. One folder under `.claude/skills/`, one SKILL.md, frontmatter with clear trigger phrases. Look at `.claude/skills/decide/SKILL.md` for the shape.
+- **Starter templates.** New verticals for `templates/` (see the four existing ones for the shape: venture skeleton, vault taxonomy, numbers that matter, typical first loops).
 - **War stories.** Open an issue describing where the agent broke the loop or produced something dumb. Real transcripts (redacted) are gold.
 - **Docs fixes.** Anything that confused you will confuse others.
 
@@ -17,7 +17,8 @@ Thanks for wanting to make Shotgun better. Two ground rules keep this project wh
 1. Frontmatter: `name`, `description` containing the exact trigger phrases, `version: 1`.
 2. Numbered steps a weaker model can follow without judgment calls.
 3. A `## Verify` section: a checkable way to confirm the skill worked (a command, a file that must exist, an observable output).
-4. Nothing that automates judgment or skips a confirmation gate, those get declined on sight.
+4. Commands founders must run themselves come in both flavors: bash AND Windows PowerShell.
+5. Nothing that automates judgment or skips a confirmation gate, those get declined on sight.
 
 Related skills can ship together as a **pack**: one folder per skill plus a `PACK.md` listing what's inside and the founder type it serves. Propose packs as an issue first.
 

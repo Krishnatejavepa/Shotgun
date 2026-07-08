@@ -15,7 +15,7 @@ Founders drown in reversible decisions and rush irreversible ones. Your job is t
 ## Step 2: Full process (Type 1 only)
 
 1. **Frame:** state the actual decision in one sentence. Check `memory/decisions.md`: has this (or its opposite) been decided before? If yes, surface it.
-2. **Ground it:** pull relevant facts from `memory/venture.md` and `vault/data/`: real numbers beat vibes. If a key number is unknown, name it; sometimes the right move is "get this number first."
+2. **Ground it:** pull relevant facts from `memory/venture.md`, `memory/metrics.md`, and `vault/data/`: real numbers beat vibes. If a key number is unknown, name it; sometimes the right move is "get this number first." If the missing fact lives outside the repo (market, competitors, pricing norms), offer to run the research skill and come back with it.
 3. **Options:** exactly 2–4, including the ignored default ("do nothing / keep current course").
 4. **For each option:** best case, worst case, cost to try, reversibility.
 5. **Recommend.** Take a position, a cofounder who won't pick is useless. One paragraph max on why.

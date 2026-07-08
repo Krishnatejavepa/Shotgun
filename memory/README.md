@@ -9,6 +9,8 @@ Plain markdown files, versioned by git, indexed by `MEMORY.md`. No database, no 
 | `MEMORY.md` | Index, one line per memory file/section | Any memory file changes |
 | `founder-profile.md` | Who the founder is, preferences, working style | Onboarding + whenever new prefs surface |
 | `venture.md` | Current business state: product, customers, priorities, risks | Anything about the business changes |
+| `voice.md` | The founder's writing voice: samples + extracted rules | Onboarding Phase 4 + whenever the founder edits a draft |
+| `metrics.md` | The numbers over time: one dated row per weekly pulse, plus ad-hoc updates | Weekly review (MUST) + whenever a real number surfaces |
 | `open-loops.md` | Unfinished work, pending decisions, waiting-ons, each with a date | Work starts/stops incomplete |
 | `decisions.md` | Every real decision: date, what, why, revisit-when | A decision is made |
 | `feedback.md` | Corrections from the founder + why + how to apply | Founder corrects the agent |
@@ -22,6 +24,7 @@ Plain markdown files, versioned by git, indexed by `MEMORY.md`. No database, no 
 3. Dates are absolute (2026-07-04), never "yesterday".
 4. Announce saves to the founder in one line: "📌 Saved: …"
 5. Never store secrets. Reference `.env` locations instead.
+6. `metrics.md` is append-only per date: never rewrite an old number, append the corrected one with today's date. History is the point.
 
 ## Recall routine (how to find a memory, MUST for any "what did we say/decide about X")
 
@@ -29,7 +32,7 @@ Never answer a question about a past fact, decision, or event from conversationa
 
 1. Grep `memory/` for the founder's term PLUS 2-3 synonyms and related words you generate yourself ("pricing" also means "subscription", "tier", "$"). This is semantic search without embeddings: the model supplies the synonyms, grep supplies the speed.
 2. If the question is about a decision, read the matching entries in `decisions.md` in full, including the Why and Revisit-when.
-3. If the question is time-anchored ("what happened in May"), scan `journal.md` and `changelog.md` by date prefix.
+3. If the question is time-anchored ("what happened in May"), scan `journal.md` and `changelog.md` by date prefix. If it's about a number ("what was MRR in May"), scan `metrics.md` by date prefix.
 4. Answer with the source and date: "Decided 2026-06-12 (decisions.md): lifetime deals rejected because…". Facts without a source line don't get asserted as memory.
 5. Nothing found → say so plainly and ask, then save the answer so it's never missing twice.
 
