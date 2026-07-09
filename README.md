@@ -28,8 +28,8 @@ Not a chatbot. Not a coding tool. An operating system for running a company of o
 
 ## Requirements
 
-- Works on any capable coding agent: **Claude Code, Cursor, Antigravity, Gemini, or GitHub Copilot**.
-- The operating loop is written as explicit checklists, so any capable model (Opus, Sonnet, GPT-4o, Gemini 1.5 Pro) executes it identically. No dependency on a specific model tier.
+- Works on **any agent that reads the [AGENTS.md standard](https://agents.md)** (28+ tools: Codex CLI, Windsurf, Zed, Devin, Aider, Amp, Jules, and more), with first-class native wiring for **Claude Code, Cursor, Antigravity, Gemini CLI, and GitHub Copilot**.
+- The operating loop is written as explicit checklists, so any capable model (Claude Opus or Sonnet, GPT-5 class, Gemini 2.5 Pro or newer) executes it identically. No dependency on a specific model tier.
 
 ## Quickstart (10 minutes)
 
@@ -54,7 +54,7 @@ Once installed, simply open any project folder in your terminal and run:
 ```bash
 shotgun-init
 ```
-This instantly injects the `.shotgun/` vault and `SHOTGUN.md` operating loop into your directory.
+This injects the full operating system into your directory: the `SHOTGUN.md` loop, `.shotgun/` skills, the memory and vault scaffolds with their templates, starter templates, docs, and every agent entry point (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules`, Copilot instructions). Existing files are never overwritten. The installer works from anywhere: it downloads Shotgun once to `~/.shotgun-os` (or uses your clone if you run it from one) and is safe to re-run for updates.
 
 Then boot up your preferred AI (e.g. `claude`, Cursor IDE, Antigravity, or Gemini) and just say **"hi"**. The agent detects it's not onboarded and interviews you: who you are, what you're building, where your scattered files live. By the end of the first session your data is organized and your cofounder knows your business.
 
@@ -78,7 +78,9 @@ From then on, every session starts with it reading its memory. Try:
 ```
 shotgun/
 ├── SHOTGUN.md            # The operating loop: read every session, followed exactly
+├── AGENTS.md             # Universal entry point (the AGENTS.md standard, 28+ tools)
 ├── .shotgun/skills/      # Workflows: onboard, build, write, organize-data, decide,
+│                        #   idea-refine, spar, finance, legal, support, data-hook,
 │                        #   research, grow, daily, loop, experiment, review, port,
 │                        #   doctor (+ 24 engineering skills + learned-* skills)
 ├── .shotgun/commands/    # Slash commands for the development lifecycle (/build, /test, etc.)
@@ -91,7 +93,7 @@ shotgun/
 └── docs/                # Architecture, hardening, learned-skill format
 ```
 
-Everything is plain markdown and git. No servers, no database, no lock-in. You can read every "thought" your cofounder has stored, edit it, or take it anywhere. Skills live in `.shotgun/skills/`. The `setup-compatibility` script symlinks this directory so that your platform of choice discovers them natively; the loop routes to them by explicit path so any capable harness works too.
+Everything is plain markdown and git. No servers, no database, no lock-in. You can read every "thought" your cofounder has stored, edit it, or take it anywhere. Skills live in `.shotgun/skills/`. The `setup-compatibility` script symlinks this directory so that your platform of choice discovers them natively; the loop routes to them by explicit path so any capable harness works too. And the repo audits itself: a CI workflow validates every skill's frontmatter, every routing path, and the installer end-to-end on every push, the machine-checked half of the doctor skill.
 
 ## Why not OpenClaw or Hermes Agent?
 
@@ -121,7 +123,7 @@ They win on 24/7 availability and channels. Shotgun wins on judgment, focus, and
 - [Hardening](docs/HARDENING.md), optional setup: backups, hooks, permissions
 - [Learned skills](docs/LEARNED-SKILLS.md), how the cofounder writes and improves its own procedures
 - [Contributing](CONTRIBUTING.md), how to add skills, templates, and war stories
-- [Changelog](CHANGELOG.md), what changed in v1.3
+- [Changelog](CHANGELOG.md), what changed in v1.4
 
 ## License
 

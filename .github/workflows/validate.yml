@@ -1,0 +1,78 @@
+name: Validate Shotgun integrity
+
+# The doctor skill audits a founder's live copy. This workflow audits the
+# framework itself on every push and PR: the machine-checked half of RULE 0.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Skill frontmatter (every skill discoverable)
+        run: |
+          fail=0
+          for f in .shotgun/skills/*/SKILL.md; do
+            head -1 "$f" | grep -q '^---$' || { echo "::error file=$f::missing frontmatter"; fail=1; }
+            grep -q '^name:' "$f" || { echo "::error file=$f::missing name"; fail=1; }
+            grep -q '^description:' "$f" || { echo "::error file=$f::missing description"; fail=1; }
+            dir=$(basename "$(dirname "$f")")
+            name=$(awk '/^name:/{print $2; exit}' "$f")
+            [ "$dir" = "$name" ] || { echo "::error file=$f::frontmatter name '$name' != folder '$dir'"; fail=1; }
+          done
+          exit $fail
+
+      - name: Routing table (every skill path in SHOTGUN.md exists)
+        run: |
+          fail=0
+          for p in $(grep -oE '\.shotgun/[A-Za-z0-9_/-]+\.md' SHOTGUN.md | sort -u); do
+            [ -f "$p" ] || { echo "::error file=SHOTGUN.md::routes to missing file $p"; fail=1; }
+          done
+          exit $fail
+
+      - name: Cross-references (every .shotgun/ path referenced anywhere exists)
+        run: |
+          fail=0
+          # Strip URLs first so links to external repos aren't treated as local paths.
+          for p in $(grep -rh --include='*.md' -E '\.shotgun/' . | sed -E 's|https?://[^ )]+||g' | grep -oE '\.shotgun/[A-Za-z0-9_/-]+\.md' | sort -u); do
+            [ -f "$p" ] || { echo "::error::dangling reference $p"; fail=1; }
+          done
+          exit $fail
+
+      - name: No leftover plugin namespaces
+        run: |
+          if grep -rn "agent-skills:" --include='*.md' --exclude=CHANGELOG.md .; then
+            echo "::error::found agent-skills: namespace leftovers"; exit 1
+          fi
+
+      - name: Agent entry points present
+        run: |
+          fail=0
+          for f in AGENTS.md CLAUDE.md GEMINI.md .cursorrules .github/copilot-instructions.md SHOTGUN.md; do
+            [ -f "$f" ] || { echo "::error::missing entry point $f"; fail=1; }
+          done
+          exit $fail
+
+      - name: Installer syntax
+        run: |
+          bash -n install.sh
+          bash -n setup-compatibility.sh
+
+      - name: Installer end-to-end (shotgun-init scaffolds a working copy)
+        run: |
+          set -e
+          export HOME=$(mktemp -d)
+          touch "$HOME/.bashrc"
+          bash install.sh
+          target=$(mktemp -d)
+          cd "$target"
+          bash -c "source $HOME/.bashrc && shotgun-init"
+          for p in SHOTGUN.md AGENTS.md .shotgun/skills/onboard/SKILL.md memory/README.md memory/_templates/founder-profile.md vault/VAULT-GUIDE.md templates/saas.md docs/ARCHITECTURE.md; do
+            [ -e "$p" ] || { echo "::error::shotgun-init did not scaffold $p"; exit 1; }
+          done
+          echo "shotgun-init scaffold verified."

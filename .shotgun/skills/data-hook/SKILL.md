@@ -1,6 +1,6 @@
 ---
 name: data-hook
-description: Automated parsing of Stripe exports, Google Analytics screenshots, or raw CSV data into canonical memory metrics.
+description: "Automated parsing of Stripe exports, Google Analytics screenshots, or raw CSV/text data dumps into canonical memory metrics. Trigger phrases: 'here is my stripe export', 'parse this csv', 'update my metrics from this', 'here is a screenshot of my dashboard'."
 ---
 
 # Data Hook Protocol

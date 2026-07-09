@@ -17,3 +17,6 @@ __pycache__/
 *.pyc
 dist/
 .next/
+
+# Machine-local agent settings inside the universal dir
+.shotgun/settings.local.json

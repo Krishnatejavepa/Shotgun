@@ -25,7 +25,7 @@ The single biggest design constraint: **the loop must run identically on any cap
 
 1. **MUST-marked checklists, not judgment calls.** "Read memory/founder-profile.md at session start. MUST." leaves nothing to model personality.
 2. **Numbered sequences with explicit ordering.** Weaker models follow sequences reliably; only interpretation varies, so interpretation is minimized.
-3. **Exact request classification.** Every founder message maps to exactly one of twelve classes (QUICK/BUILD/WRITE/ORGANIZE/PORT/DECIDE/RESEARCH/GROW/DAILY/LOOP/EXPERIMENT/REVIEW), each with its own skill file. No ambient behavior.
+3. **Exact request classification.** Every founder message maps to exactly one of eighteen classes (QUICK/BUILD/WRITE/ORGANIZE/PORT/DECIDE/IDEA/SPAR/FINANCE/DATA-HOOK/LEGAL/SUPPORT/RESEARCH/GROW/DAILY/LOOP/EXPERIMENT/REVIEW), each with its own skill file. No ambient behavior.
 4. **State in files, not in context.** The model can be swapped mid-week; the new model reads the same memory and continues. Nothing important lives only in a conversation.
 5. **Self-verification steps.** "Run the code before delivering", "announce every memory save", outputs are checkable, so drift is visible and correctable. The doctor skill audits the whole system monthly.
 
@@ -37,6 +37,8 @@ Two discovery mechanisms, belt and suspenders:
 2. **Native discovery.** `.shotgun/skills/` is where compatible agents look for project skills: they preload each skill's frontmatter (name + description) and can trigger the right skill even before classification. The `description` fields carry the trigger phrases for exactly this reason.
 
 Memory auto-load works the same way: SHOTGUN.md §1 uses `@memory/MEMORY.md` imports (inlined automatically by agents that support it) AND a MUST-read instruction as the fallback for all harnesses.
+
+Entry points follow the same belt-and-suspenders logic. The root `AGENTS.md` (the Linux Foundation standard read by 28+ tools) points every compliant agent at SHOTGUN.md; `CLAUDE.md`, `GEMINI.md`, `.cursorrules`, and `.github/copilot-instructions.md` do the same for tools with their own conventions. One sentence each, all roads lead to the loop.
 
 ## Data flow
 
@@ -51,6 +53,7 @@ Memory auto-load works the same way: SHOTGUN.md §1 uses `@memory/MEMORY.md` imp
 - Nothing presented as done without verification (build §4).
 - All memory human-readable and human-editable, the founder can audit every stored "belief".
 - Secrets never enter memory or vault; `.env` only, gitignored. The doctor skill greps for leaks monthly.
+- The framework audits itself in CI: `.github/workflows/validate.yml` checks every skill's frontmatter, every routing path in SHOTGUN.md, all cross-references, and runs the installer end-to-end on every push. The doctor skill audits a founder's live copy; CI audits the framework.
 
 ## Extension model
 

@@ -10,7 +10,7 @@ A cofounder that quietly rots is worse than none: stale loops, a lying index, a 
 ## Check 1: Memory integrity
 
 1. Every file in `memory/` (except README.md and `_templates/`) has a line in `memory/MEMORY.md`, and every index line points to a file that exists. Mismatch → rebuild the index.
-2. `MEMORY.md` over ~50 lines → run the consolidation routine (`memory/README.md`). `journal.md` over ~60 lines → run the journal roll-up.
+2. `MEMORY.md` over ~50 lines → run the consolidation routine (`memory/README.md`). `journal.md` over ~30 lines → run the journal roll-up.
 3. Grep `memory/` and `vault/` for secret patterns: `api_key`, `secret`, `password`, `sk-`, `Bearer `, `BEGIN RSA`. Any hit that looks like a real credential → alert the founder FIRST (it may need rotating, deleting the file doesn't unleak it), then move the reference to `.env`.
 
 ## Check 2: Loops and open work
@@ -38,7 +38,11 @@ A cofounder that quietly rots is worse than none: stale loops, a lying index, a 
 2. Every `learned-*` skill has a `## Verify` and a `## Changelog` section. Missing → add them from `docs/LEARNED-SKILLS.md` format.
 3. Any learned skill whose last changelog entry records a failed repair → list it for the weekly-review decision: repair with the founder or delete.
 
-## Check 6: The contract
+## Check 6: Entry points
+
+Confirm every agent entry point exists and points at the loop: `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules`, `.github/copilot-instructions.md`. Missing or blank → recreate it with the standard one-liner ("Read SHOTGUN.md to understand your core loop." for platform files; the root AGENTS.md carries the full pointer). Also confirm the platform symlinks/junctions from `setup-compatibility` resolve (`.claude`, `.agents/skills`, `.cursor/rules`); a dangling link is a silent discovery failure.
+
+## Check 7: The contract
 
 `git log --oneline -5 -- SHOTGUN.md`: recent changes to SHOTGUN.md get shown to the founder with one question: "You approved these, right?" (§9.5: the loop is never edited silently.)
 

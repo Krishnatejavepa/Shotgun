@@ -1,5 +1,33 @@
 # Changelog
 
+## v1.4 (2026-07-09)
+
+The theme: a quickstart that actually works, and compatibility with the whole agent ecosystem instead of five tools.
+
+**Installer, rebuilt (the v1.3 one was broken)**
+
+- `curl | bash` / `iwr | iex` now work from anywhere: the installer downloads Shotgun once to `~/.shotgun-os` (git clone with tarball fallback), or uses your local clone if run from inside one. The v1.3 script required you to already be inside a cloned repo, which contradicted its own instructions.
+- `shotgun-init` now scaffolds the complete OS, not just `.shotgun/` + SHOTGUN.md: memory protocol + templates, vault guide + index, starter templates, docs, workspace, all agent entry points, `.gitignore`, and the compatibility symlinks. v1.3 created empty `memory/` and `vault/` folders that onboarding then couldn't fill (missing `_templates/`).
+- Re-running the installer updates in place instead of appending duplicate aliases. Existing project files are never overwritten (`cp -n` everywhere).
+
+**AGENTS.md standard adoption**
+
+- Added a root `AGENTS.md` following the Linux Foundation AGENTS.md standard. Shotgun now boots natively on 28+ agents (Codex CLI, Windsurf, Zed, Devin, Aider, Amp, Jules, and more), not just the five with dedicated entry points.
+- Documented the entry-point model in `docs/ARCHITECTURE.md`; the doctor skill now audits entry points and compatibility symlinks (new Check 6).
+
+**CI self-validation**
+
+- New `.github/workflows/validate.yml`: on every push, machine-checks every skill's frontmatter (name matches folder), every routing path in SHOTGUN.md, all `.shotgun/` cross-references repo-wide, entry-point presence, installer syntax, and a full end-to-end `shotgun-init` scaffold test. The doctor skill audits a founder's copy; CI audits the framework itself.
+
+**Loop fixes**
+
+- New **IDEA** request class routed to the `idea-refine` skill (it existed in v1.3 but was reachable only by native discovery). Vague, unclassifiable requests now route to `interview-me`.
+- §1 lazy loading fixed: it referenced a "PLAN" task type that was never a class. Profile now loads for WRITE/DECIDE/SPAR/IDEA; venture for BUILD/GROW/DECIDE/FINANCE/LEGAL.
+- All 7 slash commands referenced a nonexistent `agent-skills:` plugin namespace (12 dangling references, leftover from the upstream plugin). They now route by explicit `.shotgun/skills/` path, same as the loop.
+- Doctor's journal roll-up threshold aligned to the v1.3 value (30 lines; it still said 60).
+- `docs/ARCHITECTURE.md` class count corrected (it still described twelve classes; there are eighteen).
+- Fixed a wrong skill path in the web-performance-auditor persona, stale 2024-era model names across docs, the metrics template attributing the weekly pulse to the wrong skill, and added `.shotgun/settings.local.json` to `.gitignore`. The data-hook skill description now carries trigger phrases like every other skill.
+
 ## v1.3 (2026-07-08)
 
 **Core Upgrades (Pure Markdown/Prompt)**

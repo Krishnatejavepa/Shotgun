@@ -2,8 +2,8 @@
 
 ## 1. Prepare Your AI Agent
 
-Shotgun natively supports **Claude Code, Cursor IDE, Google Antigravity, Gemini, and GitHub Copilot**.
-You'll need a capable model (Claude 3.5 Sonnet, GPT-4o, or Gemini 1.5 Pro). The operating loop is written as explicit checklists, so any frontier model executes it identically. No dependency on a specific model tier.
+Shotgun works on any agent that reads the **AGENTS.md standard** (28+ tools, including Codex CLI, Windsurf, Zed, Devin, and Aider), with first-class native wiring for **Claude Code, Cursor IDE, Google Antigravity, Gemini CLI, and GitHub Copilot**.
+You'll need a capable model (any current Claude Sonnet or Opus, GPT-5 class, or Gemini 2.5 Pro or newer). The operating loop is written as explicit checklists, so any frontier model executes it identically. No dependency on a specific model tier.
 
 ## 2. Pick the folder
 
@@ -26,10 +26,14 @@ Windows (PowerShell):
 iwr https://raw.githubusercontent.com/Krishnatejavepa/Shotgun/main/install.ps1 -UseBasicParsing | iex
 ```
 
+The installer works from anywhere: it downloads Shotgun once to `~/.shotgun-os` (or uses your local clone if you run it from inside one) and is safe to re-run for updates.
+
 Then navigate to any empty folder (or your existing project folder) and run:
 ```bash
 shotgun-init
 ```
+
+This scaffolds the complete operating system: `SHOTGUN.md`, `.shotgun/` skills, memory and vault scaffolds with templates, starter templates, docs, and every agent entry point (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules`, Copilot instructions). It never overwrites files you already have, and it wires up platform symlinks automatically.
 
 *Note: For the best experience, run `git init` and `git commit` to version control your cofounder's memory history. (If you skip it, the agent will catch it and cut the cord for you during onboarding.)*
 

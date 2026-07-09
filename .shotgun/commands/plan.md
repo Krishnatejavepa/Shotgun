@@ -2,7 +2,7 @@
 description: Break work into small verifiable tasks with acceptance criteria and dependency ordering
 ---
 
-Invoke the agent-skills:planning-and-task-breakdown skill.
+Invoke the planning-and-task-breakdown skill (`.shotgun/skills/planning-and-task-breakdown/SKILL.md`).
 
 Read the existing spec (SPEC.md or equivalent) and the relevant codebase sections. Then:
 
