@@ -15,9 +15,9 @@ Right way to get durability: a plain local folder (e.g., `~/shotgun` or `C:\User
 
 Ask the cofounder to commit at session end (it already journals; committing makes the snapshot durable). Once a week, either push to your private remote or say "back everything up" (the port skill produces a verified, secrets-excluded bundle). The migrate flow in the port skill is the restore test; run it once so the backup isn't theoretical.
 
-## 3. Optional Claude Code hooks
+## 3. Optional session-start hooks (agent-specific)
 
-Claude Code can run a command at session start and inject its output into context. This makes the Session Start Protocol mechanical instead of instructed. If you want it, create `.claude/settings.json`:
+Some AI coding agents (e.g., Claude Code) can run a command at session start and inject its output into context. This makes the Session Start Protocol mechanical instead of instructed. If your agent supports hooks, create `.shotgun/settings.json`:
 
 macOS/Linux:
 
@@ -55,11 +55,11 @@ Shotgun ships without hooks on purpose: a broken hook breaks every session, and 
 
 ## 4. Permissions worth pre-approving
 
-If Claude Code keeps prompting for the same safe operations, allow them in `.claude/settings.json` permissions: reads and greps of `memory/` and `vault/`, `git add/commit/log/diff` in the repo. Keep prompts ON for anything under §3.3 (push, deploy, send, delete, spend). The prompt friction there is the feature.
+If your AI coding agent keeps prompting for the same safe operations, allow them in its settings: reads and greps of `memory/` and `vault/`, `git add/commit/log/diff` in the repo. Keep prompts ON for anything under §3.3 (push, deploy, send, delete, spend). The prompt friction there is the feature.
 
 ## 5. Model choice
 
-The loop runs on any capable Claude model by design. If you use multiple: Opus-class models for DECIDE-heavy and REVIEW-heavy sessions, Sonnet-class for BUILD/ORGANIZE grinding. Memory files make the switch free; nothing lives in the conversation.
+The loop runs on any capable frontier model by design. If you use multiple: use stronger models (e.g., Opus, GPT-4o) for DECIDE-heavy and REVIEW-heavy sessions, and faster models (e.g., Sonnet, GPT-4o-mini, Gemini Flash) for BUILD/ORGANIZE grinding. Memory files make the switch free; nothing lives in the conversation.
 
 ## 6. If you push anywhere, push private
 

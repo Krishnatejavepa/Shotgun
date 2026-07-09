@@ -6,7 +6,7 @@ Always-on personal AI agents have earned real security criticism: daemons with b
 
 - **Shotgun only runs when you run it.** There is no background process, no server, no webhook, nothing listening. The attack surface when you're not in a session is zero.
 - **No messaging-platform bridges.** Nothing can message your agent but you, sitting at your keyboard. Prompt injection via inbound WhatsApp/Telegram/email, the classic always-on-agent attack, is structurally impossible here.
-- **Human in the loop by contract.** The operating loop (CLAUDE.md §3.3) requires explicit confirmation before anything irreversible: deleting data, deploying, sending anything to real people, spending money. This rule cannot be overridden by a learned skill (§9 bounds).
+- **Human in the loop by contract.** The operating loop (SHOTGUN.md §3.3) requires explicit confirmation before anything irreversible: deleting data, deploying, sending anything to real people, spending money. This rule cannot be overridden by a learned skill (§9 bounds).
 
 ## Data
 
@@ -15,13 +15,13 @@ Always-on personal AI agents have earned real security criticism: daemons with b
 - **Secrets never enter memory or the vault.** API keys and credentials live only in `.env` files, which are gitignored by default. The loop forbids the agent from writing secrets into memory files.
 - **Git is your audit log.** Every memory change is a diff. `git log -p memory/` shows you exactly what your agent learned and when.
 - **External actions leave a written trail.** Every confirmed irreversible action (a send, a deploy, a purchase, a deletion) gets a `[external]`-tagged line in `memory/changelog.md` with the date and what happened. You can reconstruct everything your agent ever did outside the repo from one file.
-- **Backups never contain secrets.** The export bundle (`.claude/skills/port`) excludes `.env` by contract and verifies the exclusion before reporting done.
+- **Backups never contain secrets.** The export bundle (`.shotgun/skills/port`) excludes `.env` by contract and verifies the exclusion before reporting done.
 
 ## Injection surfaces that DO exist (and mitigations)
 
-- **Files you feed it.** A malicious document in the vault could contain adversarial instructions. Mitigation: the loop treats file contents as data, not instructions; the CLAUDE.md contract explicitly wins over any conflicting instruction (RULE 0). Still, don't feed it files from sources you don't trust.
+- **Files you feed it.** A malicious document in the vault could contain adversarial instructions. Mitigation: the loop treats file contents as data, not instructions; the SHOTGUN.md contract explicitly wins over any conflicting instruction (RULE 0). Still, don't feed it files from sources you don't trust.
 - **Web content during research.** Same principle: fetched content is data. Confirmation gates on irreversible actions are the backstop.
-- **Third-party skills.** A skill file IS instructions your agent will follow. Read any community skill before dropping it into `.claude/skills/`; the supply-chain attacks on always-on agent marketplaces worked exactly this way. The doctor skill audits skill frontmatter monthly, but it can't read intent for you.
+- **Third-party skills.** A skill file IS instructions your agent will follow. Read any community skill before dropping it into `.shotgun/skills/`; the supply-chain attacks on always-on agent marketplaces worked exactly this way. The doctor skill audits skill frontmatter monthly, but it can't read intent for you.
 
 ## Your responsibilities
 

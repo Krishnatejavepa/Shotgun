@@ -4,11 +4,11 @@
 
 ```
 ┌──────────────────────────────────────────┐
-│  Model (Opus / Sonnet / future)          │  ← interchangeable
+│  Model (any frontier LLM)                │  ← interchangeable
 ├──────────────────────────────────────────┤
-│  CLAUDE.md: the operating loop           │  ← the contract; deterministic checklists
+│  SHOTGUN.md: the operating loop           │  ← the contract; deterministic checklists
 ├──────────────────────────────────────────┤
-│  .claude/skills/: workflow modules       │  ← onboard, build, write, organize-data,
+│  .shotgun/skills/: workflow modules       │  ← onboard, build, write, organize-data,
 │    (+ learned-*: self-written)           │    decide, research, grow, daily, loop,
 │                                          │    experiment, review, port, doctor
 ├──────────────────────────────────────────┤
@@ -29,14 +29,14 @@ The single biggest design constraint: **the loop must run identically on any cap
 4. **State in files, not in context.** The model can be swapped mid-week; the new model reads the same memory and continues. Nothing important lives only in a conversation.
 5. **Self-verification steps.** "Run the code before delivering", "announce every memory save", outputs are checkable, so drift is visible and correctable. The doctor skill audits the whole system monthly.
 
-## Why skills live in .claude/skills/
+## Why skills live in .shotgun/skills/
 
 Two discovery mechanisms, belt and suspenders:
 
-1. **Explicit routing.** CLAUDE.md §2 maps every request class to a skill file by path. This works in any harness that can read files, which is what makes Shotgun portable beyond Claude Code.
-2. **Native discovery.** `.claude/skills/` is where Claude Code looks for project skills: it preloads each skill's frontmatter (name + description) and can trigger the right skill even before classification. The `description` fields carry the trigger phrases for exactly this reason.
+1. **Explicit routing.** SHOTGUN.md §2 maps every request class to a skill file by path. This works in any harness that can read files, which is what makes Shotgun portable across all supported platforms.
+2. **Native discovery.** `.shotgun/skills/` is where compatible agents look for project skills: they preload each skill's frontmatter (name + description) and can trigger the right skill even before classification. The `description` fields carry the trigger phrases for exactly this reason.
 
-Memory auto-load works the same way: CLAUDE.md §1 uses `@memory/MEMORY.md` imports (inlined automatically by Claude Code) AND a MUST-read instruction as the fallback for other harnesses.
+Memory auto-load works the same way: SHOTGUN.md §1 uses `@memory/MEMORY.md` imports (inlined automatically by agents that support it) AND a MUST-read instruction as the fallback for all harnesses.
 
 ## Data flow
 
@@ -54,7 +54,7 @@ Memory auto-load works the same way: CLAUDE.md §1 uses `@memory/MEMORY.md` impo
 
 ## Extension model
 
-A skill = one folder under `.claude/skills/` + one SKILL.md with frontmatter (name, description, version). The description tells the agent when to trigger it; a `## Verify` section makes it self-testing. Community skills drop in without touching the core loop; only new *request classes* require a one-line addition to CLAUDE.md §2. Related skills ship together as packs (CONTRIBUTING.md), and starter templates in `templates/` extend onboarding per vertical without touching the onboard skill.
+A skill = one folder under `.shotgun/skills/` + one SKILL.md with frontmatter (name, description, version). The description tells the agent when to trigger it; a `## Verify` section makes it self-testing. Community skills drop in without touching the core loop; only new *request classes* require a one-line addition to SHOTGUN.md §2. Related skills ship together as packs (CONTRIBUTING.md), and starter templates in `templates/` extend onboarding per vertical without touching the onboard skill.
 
 ## Portability model
 

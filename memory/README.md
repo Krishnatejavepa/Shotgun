@@ -51,10 +51,10 @@ Present the result as a human summary, not raw diff output, but offer the raw di
 1. Merge duplicate/overlapping facts; keep the newest phrasing.
 2. Move stale-but-true history to the bottom of each file under `## Archive`.
 3. Delete facts that turned out false (note the correction in feedback.md).
-4. Rebuild MEMORY.md from scratch.
+4. Rebuild MEMORY.md from scratch. Ensure it contains a highly condensed 1-2 line summary of the venture state so the agent doesn't need to load `venture.md` for basic context.
 5. Tell the founder what was consolidated.
 
-## Journal roll-up (run when journal.md exceeds ~60 lines, during a DAILY session)
+## Journal roll-up (run when journal.md exceeds ~30 lines, during a DAILY session)
 
 1. Entries older than 30 days get compressed: one `YYYY-MM: <3-4 sentence month summary>` block replaces that month's individual lines.
 2. Keep anything still referenced by an open loop or a pending decision as its own line.

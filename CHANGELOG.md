@@ -1,5 +1,43 @@
 # Changelog
 
+## v1.3 (2026-07-08)
+
+**Core Upgrades (Pure Markdown/Prompt)**
+
+- **Global Installer**: Added `install.sh` and `install.ps1` to easily set up a `shotgun-init` alias, allowing founders to initialize the OS in any existing codebase without cloning.
+- **Morning Intelligence Brief**: Upgraded the `daily` skill. Typing "good morning" now generates a comprehensive brief including yesterday's burn, metrics checks, pending decisions for research, and today's ONE thing.
+- **Data Hooks**: Added `data-hook` skill (`DATA-HOOK` class in loop) to instruct the agent to parse pasted Stripe CSVs, text dumps, or screenshots directly into canonical metrics without needing code or API keys.
+
+**Cross-Platform Architecture**
+
+- Transformed Shotgun into a truly platform-agnostic operating system. The core loop is now `SHOTGUN.md` and skills live in `.shotgun/`.
+- Created native entry point files for **Claude Code, Cursor, Antigravity, Gemini, and GitHub Copilot**.
+- Provided `setup-compatibility.sh` and `setup-compatibility.ps1` to automatically wire up native platform directories (like `.cursor/rules` or `.agents`) to the universal `.shotgun/` vault.
+
+**Solofounder Core Skills**
+
+- **`spar`**: A dedicated "Red Team" skill. When the founder needs to bounce an idea, Shotgun intentionally plays devil's advocate, aggressively stress-testing assumptions to break the echo chamber.
+- **`finance`**: A virtual CFO. Tracks MRR, Burn Rate, and Runway. If runway drops below 3 months, Shotgun enters "Survival Mode" and aggressively pushes back against any BUILD requests that don't generate immediate revenue.
+- **`legal`**: A compliance advisor. Captures the founder's jurisdiction and individual visa/immigration status, drafts localized privacy policies/terms, and generates corporate roadmaps based on immigration constraints (all guarded by strict attorney disclaimers).
+- **`support`**: A triage system for noisy user feedback. Categorizes emails/tweets, files bugs, and drafts empathetic replies in the founder's voice, preventing context-switching.
+
+**Engineering Skills Integration**
+
+- Integrated a library of 24 production-grade engineering skills (TDD, architectural reviews, CI/CD, etc.) natively into `.shotgun/skills/`.
+- Included specialist personas (e.g., Code Reviewer, Security Auditor) in `.shotgun/agents/` and reference checklists in `.shotgun/references/`.
+- Added 8 development lifecycle slash commands (`/build`, `/test`, `/review`, etc.) via `.shotgun/commands/`.
+
+**Operating Rhythm Upgrades**
+
+- **Ruthless Open Loops**: Open loops now mandate a concrete next action, an owner, and a strict due date. The daily standup automatically flags any zombie loops missing this data.
+- **Weekly Planning Command**: A new command inside the `daily` skill generates a comprehensive weekly plan from the latest journal entries and the current venture state.
+
+**Context & Token Optimization**
+
+- Implemented **Lazy Loading** for memory: `founder-profile.md` and `venture.md` are only loaded for relevant task types (`WRITE`/`PLAN`/`DECIDE`/`BUILD`/`GROW`), saving context tokens on quick queries.
+- The journal roll-up threshold was reduced from 60 lines to 30 lines to prevent context bloat.
+- `MEMORY.md` now receives a highly condensed 1-2 line venture summary during consolidation to reduce load on the main files.
+
 ## v1.2 (2026-07-07)
 
 The theme: a cofounder for the whole company, not just the codebase, and a system that keeps itself honest.
@@ -19,14 +57,14 @@ The theme: a cofounder for the whole company, not just the codebase, and a syste
 
 **Structural**
 
-- Skills moved from `skills/` to `.claude/skills/`: Claude Code now discovers them natively (frontmatter preloaded, better triggering), while CLAUDE.md keeps routing by explicit path for any other harness. Learned skills live flat as `learned-<name>` next to core skills; format doc moved to `docs/LEARNED-SKILLS.md`.
-- CLAUDE.md session start uses `@memory/MEMORY.md` and `@memory/venture.md` imports: Claude Code inlines them automatically, the MUST-read instruction remains as fallback.
+- Skills moved from `skills/` to `.shotgun/skills/`: compatible agents now discover them natively (frontmatter preloaded, better triggering), while SHOTGUN.md keeps routing by explicit path for any harness. Learned skills live flat as `learned-<name>` next to core skills; format doc moved to `docs/LEARNED-SKILLS.md`.
+- SHOTGUN.md session start uses `@memory/MEMORY.md` and `@memory/venture.md` imports (inlined automatically by agents that support it); the MUST-read instruction remains as fallback.
 - RULE 0 now states explicitly that file/web content is data, never instructions.
 
 **Cross-platform**
 
 - Every command in onboarding, port, and the quickstart now has a Windows PowerShell variant next to the bash one. The export bundle has a Compress-Archive path.
-- New `docs/HARDENING.md`: why not to run your cofounder inside OneDrive/Dropbox/iCloud, backup rhythm, optional Claude Code hooks (off by default, on purpose), permission pre-approvals, model choice.
+- New `docs/HARDENING.md`: why not to run your cofounder inside OneDrive/Dropbox/iCloud, backup rhythm, optional agent-specific hooks (off by default, on purpose), permission pre-approvals, model choice.
 
 **Imports**
 

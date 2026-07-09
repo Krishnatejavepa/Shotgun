@@ -2,11 +2,11 @@
 
 Skills Shotgun writes for itself as it works with you, the compounding execution layer.
 
-When a multi-step task gets figured out and is likely to recur, the agent offers to save the procedure (see CLAUDE.md §9). Each learned skill captures the exact steps that worked *for this founder*, file locations, preferences, tools, so next time is instant and consistent.
+When a multi-step task gets figured out and is likely to recur, the agent offers to save the procedure (see SHOTGUN.md §9). Each learned skill captures the exact steps that worked *for this founder*, file locations, preferences, tools, so next time is instant and consistent.
 
 ## Where they live
 
-`.claude/skills/learned-<task-name>/SKILL.md`, flat alongside the core skills. The `learned-` prefix marks them as self-written; the location means Claude Code discovers them natively, same as core skills.
+`.shotgun/skills/learned-<task-name>/SKILL.md`, flat alongside the core skills. The `learned-` prefix marks them as self-written; the location means compatible agents discover them natively, same as core skills.
 
 ## Format
 

@@ -2,12 +2,12 @@
 
 Thanks for wanting to make Shotgun better. Two ground rules keep this project what it is:
 
-1. **The loop stays deterministic.** Changes to CLAUDE.md must be explicit checklists that any capable model executes identically. If a rule depends on model judgment to interpret, rewrite it until it doesn't.
+1. **The loop stays deterministic.** Changes to SHOTGUN.md must be explicit checklists that any capable model executes identically. If a rule depends on model judgment to interpret, rewrite it until it doesn't.
 2. **Memory stays portable markdown.** No databases, no embeddings, no proprietary formats. If a founder can't read their agent's memory in a text editor, it doesn't ship.
 
 ## What we want most
 
-- **New skills.** Vertical workflows for specific founder types: indie hacker, mobile apps, local services, marketplaces. One folder under `.claude/skills/`, one SKILL.md, frontmatter with clear trigger phrases. Look at `.claude/skills/decide/SKILL.md` for the shape.
+- **New skills.** Vertical workflows for specific founder types: indie hacker, mobile apps, local services, marketplaces. One folder under `.shotgun/skills/`, one SKILL.md, frontmatter with clear trigger phrases. Look at `.shotgun/skills/decide/SKILL.md` for the shape.
 - **Starter templates.** New verticals for `templates/` (see the four existing ones for the shape: venture skeleton, vault taxonomy, numbers that matter, typical first loops).
 - **War stories.** Open an issue describing where the agent broke the loop or produced something dumb. Real transcripts (redacted) are gold.
 - **Docs fixes.** Anything that confused you will confuse others.
@@ -25,8 +25,8 @@ Related skills can ship together as a **pack**: one folder per skill plus a `PAC
 ## How
 
 1. Fork, branch, PR. Small PRs get reviewed fast, big rewrites should start as an issue.
-2. Test your skill by actually running it with Claude Code in a scratch copy, and say in the PR what model you tested on and what the `## Verify` output was.
-3. Writing style everywhere: no em dashes, no filler, short sentences. The style contract in CLAUDE.md §8 applies to docs too.
+2. Test your skill by actually running it with your preferred AI coding agent (e.g., Claude Code, Cursor, Antigravity) in a scratch copy, and say in the PR what model you tested on and what the `## Verify` output was.
+3. Writing style everywhere: no em dashes, no filler, short sentences. The style contract in SHOTGUN.md §8 applies to docs too.
 
 ## What we'll decline
 

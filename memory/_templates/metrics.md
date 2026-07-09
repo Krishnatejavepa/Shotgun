@@ -4,7 +4,7 @@
 
 **Tracking:** <the 2-4 numbers that matter for THIS venture, from the matching template in templates/. One of them is the north star.>
 
-## Pulse (one row per weekly review, appended by the daily skill)
+## Pulse (one row per weekly review, appended by the finance skill)
 
 | Date | <metric 1> | <metric 2> | <metric 3> | Note |
 |---|---|---|---|---|
