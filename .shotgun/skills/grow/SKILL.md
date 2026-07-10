@@ -27,6 +27,13 @@ Code experiments use the experiment skill; growth experiments are slower and hum
 2. The founder executes the human parts (posting, outreach); you execute everything delegable (drafting via the write skill, lists, research via the research skill).
 3. At the time box: verdict in the log, KEEP (double down) or KILL (next candidate), by the number, not the vibe. No zombie channels: pausing a channel "for now" without a kill line in the log is forbidden.
 
+**Split tests (the no-infra A/B recipe).** When the founder wants to test two variants (headline, pricing page, email subject, CTA):
+
+1. Two variants max, ONE metric, and a minimum before any verdict: a sample floor (e.g., 200 visits or 50 sends per variant) or the time box, whichever comes LAST. Log both variants in the growth-log entry.
+2. Split honestly with what exists: alternate sends between list halves, run the two headlines in consecutive equal periods, or use the platform's own A/B feature if the founder has one. State the method in the log, sequential tests are vulnerable to time effects, say so when using one.
+3. Verdict by a meaningful gap, not a decimal: under ~20% relative difference on a small sample is a tie, and a tie means keep the simpler variant. No p-value theater on 40 data points.
+4. The winner gets one line in `memory/decisions.md` if it changes standing copy or pricing (that's a real decision with a revisit trigger).
+
 ## Step 4: Launch mode
 
 When something is about to go public (a product, a feature, a post that matters):

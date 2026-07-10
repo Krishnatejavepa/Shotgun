@@ -76,3 +76,26 @@ jobs:
             [ -e "$p" ] || { echo "::error::shotgun-init did not scaffold $p"; exit 1; }
           done
           echo "shotgun-init scaffold verified."
+
+      - name: Upgrade end-to-end (shotgun-upgrade preserves founder data)
+        run: |
+          set -e
+          export HOME=$(mktemp -d)
+          touch "$HOME/.bashrc"
+          bash install.sh
+          old=$(mktemp -d)
+          cd "$old"
+          mkdir -p .shotgun/skills/learned-test memory vault workspace/app
+          printf -- "---\nname: learned-test\n---\nlearned content" > .shotgun/skills/learned-test/SKILL.md
+          printf "old loop\n\n*Shotgun v1.3, contract.*\n" > SHOTGUN.md
+          echo "founder data" > memory/founder-profile.md
+          echo "vault data" > vault/data.csv
+          echo "code" > workspace/app/main.py
+          bash -c "source $HOME/.bashrc && shotgun-upgrade"
+          grep -q "learned content" .shotgun/skills/learned-test/SKILL.md
+          grep -q "founder data" memory/founder-profile.md
+          grep -q "vault data" vault/data.csv
+          grep -q "code" workspace/app/main.py
+          grep -qE "Shotgun v[0-9.]+" SHOTGUN.md && ! grep -q "old loop" SHOTGUN.md
+          ls -d .shotgun-upgrade-backup-* >/dev/null
+          echo "shotgun-upgrade verified: framework updated, founder data untouched."

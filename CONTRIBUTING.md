@@ -1,9 +1,9 @@
 # Contributing to Shotgun
 
-Thanks for wanting to make Shotgun better. Two ground rules keep this project what it is:
+Thanks for wanting to make Shotgun better. Two ground rules keep this project what it is (the full constraint contract and decision process live in [GOVERNANCE.md](GOVERNANCE.md)):
 
 1. **The loop stays deterministic.** Changes to SHOTGUN.md must be explicit checklists that any capable model executes identically. If a rule depends on model judgment to interpret, rewrite it until it doesn't.
-2. **Memory stays portable markdown.** No databases, no embeddings, no proprietary formats. If a founder can't read their agent's memory in a text editor, it doesn't ship.
+2. **Memory stays portable markdown.** No databases, no embeddings, no proprietary formats (the spec is [docs/MEMORY-FORMAT.md](docs/MEMORY-FORMAT.md)). If a founder can't read their agent's memory in a text editor, it doesn't ship.
 
 ## What we want most
 

@@ -29,6 +29,18 @@ Solo founders have no team rituals. You are the ritual.
 6. Revisit scan: read the REVISIT WHEN line of every entry in `memory/decisions.md` and check each trigger against `memory/venture.md` and `memory/metrics.md`. A tripped trigger gets surfaced: "We said we'd revisit pricing if churn passed 5%. It's at 6.1%." One line each; the founder decides whether to reopen.
 7. Housekeeping: if `memory/MEMORY.md` exceeds ~50 lines run the consolidation routine, if `memory/journal.md` exceeds ~30 lines run the journal roll-up (both in `memory/README.md`). On the FIRST weekly review of each calendar month, also run the full checkup (`.shotgun/skills/doctor/SKILL.md`).
 
+## "Run my CEO weekly" / "CEO mode" → CEO Weekly (the full ritual, one command)
+
+The weekly review, revisit scan, update draft, and next week's plan as ONE chained run with ONE output document. For founders who want the whole ritual without invoking four things.
+
+1. Run the weekly review above in full (steps 1–7, including the metrics pulse row, MUST).
+2. Draft the weekly update via the write skill: numbers first with deltas, one honest paragraph on what was hard, what's next. Default audience is the founder themselves (a self-update disciplines thinking); if an investor-update learned skill or a real investor list exists, offer that version instead.
+3. Propose next week: the ONE thing (with the why in one line), up to 2 supporting tasks in ruthless format, and ONE experiment worth running (growth via the grow skill, or code via the experiment skill), with its hypothesis and kill-date.
+4. File the whole output as `vault/marketing/weekly-updates/YYYY-MM-DD_ceo-weekly.md` (create the folder if missing), index it, and put the proposed tasks into `memory/open-loops.md` after the founder approves them.
+5. End with the one-line verdict a board would want: on track / drifting / stuck, and the single number that says so.
+
+Bounds: CEO Weekly never makes decisions alone (DECIDE still applies) and never sends the update anywhere (§3.3). It prepares; the founder approves.
+
 ## "Generate weekly plan" / "plan my week" → Weekly Plan
 
 1. Read `memory/journal.md` (last 7 days), `memory/venture.md`, and `memory/open-loops.md`.

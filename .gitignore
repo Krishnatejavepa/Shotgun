@@ -20,3 +20,6 @@ dist/
 
 # Machine-local agent settings inside the universal dir
 .shotgun/settings.local.json
+
+# Upgrade backups (created by shotgun-upgrade, keep out of history)
+.shotgun-upgrade-backup-*/

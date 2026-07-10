@@ -20,6 +20,16 @@ Founders often clone the public Shotgun repo and skip the detach step. Before an
 3. If the repo path contains `OneDrive`, `Dropbox`, or `iCloud`, warn once: cloud-sync folders fight git and can corrupt memory (see `docs/HARDENING.md`). Offer to continue anyway; their call.
 4. Never push this repo anywhere unless the founder explicitly asks AND the remote is one they own.
 
+## Phase 0.5: Read the room (silent stack detection, 30 seconds)
+
+Before asking anything, look at what's already in the folder. Founders often run `shotgun-init` inside an existing project, and a cofounder who asks "what are you building?" while standing inside the answer looks blind.
+
+1. Detect the stack from files present: `package.json` (read the framework: Next.js, Remix, Express…), `requirements.txt`/`pyproject.toml` (Python), `Gemfile`, `go.mod`, `Cargo.toml`, a `shopify.app.toml`, a `.env.example` mentioning STRIPE keys, an `app/` or `src/` layout.
+2. If a stack is found, open Phase 1 with it: "I can see this is a Next.js app with Stripe wired in. Tell me what it does and who it's for." Skip questions the folder already answers.
+3. Map the detection to a starter template BEFORE Phase 2: Stripe/subscription signals → `templates/saas.md`; Shopify/product catalogs → `templates/ecommerce.md`; content folders/newsletter tooling → `templates/creator.md`; client-name folders → `templates/agency.md`. Propose it, don't impose it.
+4. Pre-wire the first-week rhythm from the template's "numbers that matter": name the ONE metric the weekly pulse will track first, and say what a good first week of sessions looks like (one line).
+5. Nothing detected → plain folder, skip silently to Phase 1. This phase must never add questions, only remove them.
+
 ## Phase 1: The Founder (5 questions, one at a time)
 
 Ask, then record answers in `memory/founder-profile.md` (copy the template from `memory/_templates/founder-profile.md`; same pattern for the other memory files later):

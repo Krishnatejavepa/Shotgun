@@ -16,6 +16,7 @@ Always-on personal AI agents have earned real security criticism: daemons with b
 - **Git is your audit log.** Every memory change is a diff. `git log -p memory/` shows you exactly what your agent learned and when.
 - **External actions leave a written trail.** Every confirmed irreversible action (a send, a deploy, a purchase, a deletion) gets a `[external]`-tagged line in `memory/changelog.md` with the date and what happened. You can reconstruct everything your agent ever did outside the repo from one file.
 - **Backups never contain secrets.** The export bundle (`.shotgun/skills/port`) excludes `.env` by contract and verifies the exclusion before reporting done.
+- **Sharing is allowlisted, not redacted.** Advisor Mode (port skill) builds mentor/investor bundles from an explicit allowlist of files, never by excluding from the full set, so a new private file can never leak by being forgotten in an exclusion list. The founder sees the final file list before anything is sent.
 
 ## Injection surfaces that DO exist (and mitigations)
 

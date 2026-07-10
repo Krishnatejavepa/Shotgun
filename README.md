@@ -56,6 +56,8 @@ shotgun-init
 ```
 This injects the full operating system into your directory: the `SHOTGUN.md` loop, `.shotgun/` skills, the memory and vault scaffolds with their templates, starter templates, docs, and every agent entry point (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules`, Copilot instructions). Existing files are never overwritten. The installer works from anywhere: it downloads Shotgun once to `~/.shotgun-os` (or uses your clone if you run it from one) and is safe to re-run for updates.
 
+Already running Shotgun (any version since v1.0)? `shotgun-upgrade` inside your folder brings the framework to the latest release, with your memory, vault, workspace, and learned skills untouched by contract and the old framework backed up first. CI tests this on every release.
+
 Then boot up your preferred AI (e.g. `claude`, Cursor IDE, Antigravity, or Gemini) and just say **"hi"**. The agent detects it's not onboarded and interviews you: who you are, what you're building, where your scattered files live. By the end of the first session your data is organized and your cofounder knows your business.
 
 From then on, every session starts with it reading its memory. Try:
@@ -122,8 +124,10 @@ They win on 24/7 availability and channels. Shotgun wins on judgment, focus, and
 - [Architecture](docs/ARCHITECTURE.md), how the loop, memory, and vault fit together
 - [Hardening](docs/HARDENING.md), optional setup: backups, hooks, permissions
 - [Learned skills](docs/LEARNED-SKILLS.md), how the cofounder writes and improves its own procedures
+- [Memory format spec](docs/MEMORY-FORMAT.md), the open Cofounder Memory Format (CMF) any tool can read/write
 - [Contributing](CONTRIBUTING.md), how to add skills, templates, and war stories
-- [Changelog](CHANGELOG.md), what changed in v1.4
+- [Governance](GOVERNANCE.md), how decisions get made and what will never merge
+- [Changelog](CHANGELOG.md), what changed in v1.5
 
 ## License
 

@@ -39,10 +39,10 @@ For every founder request, classify it as exactly one of:
 - **SUPPORT**: triaging user feedback, bugs, complaints, or drafting replies. Follow `.shotgun/skills/support/SKILL.md`.
 - **RESEARCH**: questions about the outside world: market, competitors, customers, "what exists for X". Follow `.shotgun/skills/research/SKILL.md`.
 - **GROW**: distribution, launches, marketing channels, "how do I get users". Follow `.shotgun/skills/grow/SKILL.md`.
-- **DAILY**: standup, planning, weekly progress check-in, "what's next", "how's it going", "generate weekly plan". Follow `.shotgun/skills/daily/SKILL.md`. (Critique of a specific piece of work is REVIEW, not DAILY. "Checkup" / "health check" runs `.shotgun/skills/doctor/SKILL.md`.)
+- **DAILY**: standup, planning, weekly progress check-in, "what's next", "how's it going", "generate weekly plan", "run my CEO weekly". Follow `.shotgun/skills/daily/SKILL.md`. (Critique of a specific piece of work is REVIEW, not DAILY. "Checkup" / "health check" runs `.shotgun/skills/doctor/SKILL.md`.)
 - **LOOP**: delegated autonomous work toward a done-condition: "loop on this", "keep going until it works". Follow `.shotgun/skills/loop/SKILL.md`.
 - **EXPERIMENT**: metric optimization with no finish line: "make X faster/better/cheaper", "optimize this". Follow `.shotgun/skills/experiment/SKILL.md`.
-- **REVIEW**: critique before shipping: "review this", "is this ready", "tear this apart". Follow `.shotgun/skills/review/SKILL.md`.
+- **REVIEW**: critique before shipping: "review this", "is this ready", "tear this apart", "debate this". Follow `.shotgun/skills/review/SKILL.md` (Debate Mode when the founder wants a trade-off argued, not findings listed).
 
 If the request is ambiguous between two classes, ask ONE clarifying question, then classify. Never ask more than two questions before starting work. If a request is too vague to classify at all ("do something about my product"), run the interview skill (`.shotgun/skills/interview-me/SKILL.md`) to extract what the founder actually wants, then classify.
 
@@ -146,4 +146,4 @@ When the founder asks to optimize something measurable ("make it faster"):
 
 ---
 
-*Shotgun v1.4, the loop above is the contract. Everything else in this repo (skills, memory, vault) plugs into it.*
+*Shotgun v1.5, the loop above is the contract. Everything else in this repo (skills, memory, vault) plugs into it.*

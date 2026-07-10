@@ -61,4 +61,4 @@ A skill = one folder under `.shotgun/skills/` + one SKILL.md with frontmatter (n
 
 ## Portability model
 
-The cofounder is a folder. The port skill exports it as a verified bundle (secrets excluded), imports Obsidian/Notion/ChatGPT brains through the vault with human-reviewed memory proposals, and merges two Shotgun memories with per-conflict founder decisions. Nothing about the design assumes this machine, this model, or this vendor.
+The cofounder is a folder. The port skill exports it as a verified bundle (secrets excluded), imports Obsidian/Notion/Roam/Google-Docs/Linear/ChatGPT brains through the vault with human-reviewed memory proposals, merges two Shotgun memories with per-conflict founder decisions, and produces allowlisted Advisor Mode bundles for mentors and investors. The memory store itself is specified as the open Cofounder Memory Format (`docs/MEMORY-FORMAT.md`), so any tool can read or write it. Nothing about the design assumes this machine, this model, or this vendor.

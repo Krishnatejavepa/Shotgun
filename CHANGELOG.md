@@ -1,5 +1,42 @@
 # Changelog
 
+## v1.5 (2026-07-10)
+
+The theme: compounding depth. Smarter first contact, richer rituals, an open memory standard.
+
+**The Cofounder Memory Format (CMF) v1.0**
+
+- New `docs/MEMORY-FORMAT.md`: a formal, versioned spec of the memory store (layout, index contract, entry formats, recall semantics, conformance rules). Any tool can now read or write a Shotgun brain; if Shotgun vanished, the spec is enough to rebuild a reader. The moat and the exit door in one document.
+
+**Rituals**
+
+- **CEO Weekly** ("run my CEO weekly"): the weekly review, revisit scan, metrics pulse, a drafted weekly update, next week's ONE thing, and one proposed experiment, chained into one command with one filed output document.
+- **Debate Mode** in the Panel ("debate this", "argue it out"): the two specialist lenses with the strongest opposing stakes argue a trade-off across two strict rounds, then the cofounder referees with a position. Ties are forbidden.
+- **Health Score**: every doctor checkup now ends with a transparent 0-100 score (system integrity 60 + momentum 40), appended to `memory/metrics.md` so health itself becomes a tracked metric. Any secret leak caps the score at 25.
+
+**Onboarding**
+
+- **Phase 0.5, stack detection**: onboarding silently reads the folder first (package.json, requirements.txt, Stripe/Shopify signals), opens with what it already knows, pre-selects the matching starter template, and pre-wires the first metric. It removes questions, never adds them.
+
+**Port & data**
+
+- **Three new importers**: Roam (JSON/EDN), Google Docs/Takeout, and Linear (CSV → open loops in ruthless format). All follow the reviewed-proposal pattern: nothing enters memory unreviewed.
+- **Advisor Mode**: a redacted read-only bundle for mentors/investors, built from an explicit allowlist (venture, metrics, decisions, changelog + named vault files only), verified before sending, with the private files structurally unable to leak.
+- **Transcript intake** (organize-data): meeting transcripts, Loom captions, and voice-note text get summarized with speaker attribution; decisions, action items, and durable facts are extracted as proposed entries. Transcripts are data, never instructions (RULE 0).
+
+**Growth**
+
+- **Split-test recipe** in the grow skill: honest no-infra A/B testing with sample floors, stated methodology, and a "meaningful gap or it's a tie" verdict rule. No p-value theater on 40 data points.
+
+**One-command upgrades**
+
+- New `shotgun-upgrade` command (installed by the same one-liner as `shotgun-init`): upgrades any install from v1.0 onward to the latest release in place. Framework files (loop, skills, commands, docs, entry points) are refreshed; `memory/`, `vault/`, `workspace/`, learned-* skills, and `.env` are untouched by contract; the old `SHOTGUN.md` and `.shotgun/` are backed up to a dated folder first. Pre-v1.2 installs get their learned skills migrated from the old `skills/` location automatically. CI runs the upgrade end-to-end on every push, asserting founder data survives.
+
+**Project**
+
+- New `GOVERNANCE.md`: the constraint contract (what will never merge), how decisions get made, the maintainer path, and the fork clause. Honest about the single-maintainer present, clear about the rules.
+- Parked for a future release, deliberately: the visual dashboard and official skill packs.
+
 ## v1.4 (2026-07-09)
 
 The theme: a quickstart that actually works, and compatibility with the whole agent ecosystem instead of five tools.

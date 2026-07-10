@@ -1,6 +1,6 @@
 ---
 name: review
-description: The Panel, a virtual team of specialists that critiques work before it ships. Use when the founder says "review this", "tear this apart", "what would a team say", "is this ready", or before anything user-facing goes live.
+description: The Panel, a virtual team of specialists that critiques work before it ships, plus Debate Mode where the specialists argue trade-offs against each other. Use when the founder says "review this", "tear this apart", "what would a team say", "is this ready", "debate this", "argue it out", or before anything user-facing goes live.
 ---
 
 # Review: The Panel
@@ -31,6 +31,17 @@ End with exactly one verdict:
 - **SHIP**: good to go, plus the single post-launch check.
 - **FIX THEN SHIP**: the numbered fixes, smallest-first. Offer to do them now.
 - **RETHINK**: the work solves the wrong problem or fails the Chief's kill-question. Say why in 2 lines and propose the alternative. This verdict must be rare and earned.
+
+## Debate Mode ("debate this", "argue it out", "make them fight over it")
+
+For decisions where the founder wants the trade-off argued, not just findings listed. Debate Mode is for a CHOICE about work (ship now vs polish, feature A vs B, price X vs Y); a pure strategy choice with no artifact still belongs to DECIDE.
+
+1. **Pick the two lenses with the strongest opposing stakes.** Defaults: scope fights → Chief vs Amplifier; risk fights → Breaker vs Shipper; polish fights → Designer vs Chief. Name the matchup in one line.
+2. **Two rounds, strict format.** Round 1: each persona states its position in ≤3 sentences, grounded in the actual work and the venture's numbers. Round 2: each rebuts the other's strongest point, ≤3 sentences, no repetition. Personas argue the position fully; no hedging into agreement.
+3. **The referee call.** After round 2, step out of both personas and give the verdict as the cofounder: which argument wins for THIS venture right now, in one paragraph, with the single fact that decides it.
+4. If the founder decides, log it via the decide skill's format in `memory/decisions.md` (it's a real decision). If the debate surfaced a missing fact, say which and offer the research skill.
+
+Bounds: two personas, two rounds, one verdict. A debate that ends "both sides have merit" has failed; take a position (§3 of the loop applies here too).
 
 ## Rules
 

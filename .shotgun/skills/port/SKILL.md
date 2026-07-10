@@ -1,6 +1,6 @@
 ---
 name: port
-description: Import, export, back up, or migrate the cofounder itself. Use when the founder says "back this up", "export everything", "move to my new laptop", "import my Obsidian vault", "import my Notion export", "import my ChatGPT history", or asks how to take their cofounder somewhere else.
+description: Import, export, back up, or migrate the cofounder itself. Use when the founder says "back this up", "export everything", "move to my new laptop", "import my Obsidian vault", "import my Notion export", "import my Roam graph", "import my Google Docs", "import my Linear issues", "import my ChatGPT history", "make an advisor bundle", or asks how to take their cofounder somewhere else.
 ---
 
 # Port: Your Cofounder Is Luggage, Not Furniture
@@ -41,7 +41,23 @@ Secrets never travel. `.env` is excluded by contract; tell the founder to move c
 
 **ChatGPT / Claude.ai export:** the export contains a conversations file (ChatGPT: `conversations.json`). Don't file raw chat logs into the vault; they're noise. Instead: scan the conversations for durable facts (about the founder, the venture, customers, decisions made, preferences stated) and produce a PROPOSED memory list, each item with its conversation date. The founder reviews and picks; the picks get written via the normal memory protocol; the raw export goes to `vault/_archive/`. Months of context in another AI shouldn't die there, but it enters memory reviewed, never wholesale.
 
-**Plain folders / another machine's Shotgun:** if it contains a `memory/` in Shotgun format, this is a MERGE, not a copy. Diff both `memory/` trees, show conflicts (same fact, different value), let the founder pick per-conflict, then rebuild MEMORY.md.
+**Roam export (JSON or EDN):** parse pages and blocks; daily-notes pages are journal-like noise, skip them by default. Pages that read as durable facts, decisions, or venture knowledge get PROPOSED as memory entries (same reviewed flow as ChatGPT). Everything else files into `vault/inbox/` as markdown for the organize-data skill. The raw export goes to `vault/_archive/`.
+
+**Google Docs / Takeout (zip of docs):** unzip into `vault/inbox/`, convert docs to markdown where the harness can, then the standard organize-data flow. Docs that are clearly business records (contracts, plans, customer notes) get filed by the vault taxonomy; facts inside them get PROPOSED as memories, never bulk-written.
+
+**Linear export (CSV):** issues are open loops in someone else's format. Propose: open/in-progress issues → `memory/open-loops.md` in ruthless format (concrete next action, owner, due date; issues missing a due date get flagged, not guessed). Closed issues worth history → one summary line each in `memory/changelog.md`. The raw CSV goes to `vault/data/` with a schema line in `vault/data/SCHEMAS.md`.
+
+**Plain folders / another machine's Shotgun:** if it contains a `memory/` in Shotgun format (the spec is `docs/MEMORY-FORMAT.md`), this is a MERGE, not a copy. Diff both `memory/` trees, show conflicts (same fact, different value), let the founder pick per-conflict, then rebuild MEMORY.md.
+
+## Advisor Mode: a redacted, read-only bundle for a mentor or investor
+
+When the founder wants to show an advisor the state of the business without handing over their private brain:
+
+1. Confirm the audience and purpose in one line (mentor check-in vs investor diligence changes what's sensible to include).
+2. Build the bundle from an ALLOWLIST, never by excluding from the full set: `memory/venture.md`, `memory/metrics.md`, `memory/decisions.md`, `memory/changelog.md`, plus any vault files the founder names explicitly. NEVER include: `founder-profile.md`, `voice.md`, `feedback.md`, `journal.md`, `open-loops.md`, `.env` anywhere, or anything in `vault/` the founder didn't name.
+3. Assemble into a dated folder `../shotgun-advisor-YYYY-MM-DD/`, add a one-page `OVERVIEW.md` on top (venture in 3 lines, the numbers with trends, the 3 most recent decisions), then archive it (tar/zip, same per-OS commands as the backup bundle).
+4. Verify like every export (MUST): list the archive, confirm ONLY allowlisted files are present, confirm zero `.env` entries. Show the founder the final file list before they send anything.
+5. Sending it to the advisor is the founder's act, not yours (§3.3). Log one `[external]` line in `memory/changelog.md` when they confirm it went out.
 
 ## Migrate: new machine
 

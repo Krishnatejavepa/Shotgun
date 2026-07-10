@@ -37,6 +37,18 @@ This scaffolds the complete operating system: `SHOTGUN.md`, `.shotgun/` skills, 
 
 *Note: For the best experience, run `git init` and `git commit` to version control your cofounder's memory history. (If you skip it, the agent will catch it and cut the cord for you during onboarding.)*
 
+## 3.5 Upgrading from any older version
+
+One command, from inside your Shotgun folder:
+
+```bash
+shotgun-upgrade
+```
+
+It refreshes the framework (loop, skills, commands, docs, entry points) to the latest release and never touches what's yours: `memory/`, `vault/`, `workspace/`, learned skills, and `.env` are untouched by contract. Your old `SHOTGUN.md` and `.shotgun/` are backed up to a dated folder first, so if you customized the loop you can diff and re-apply.
+
+On v1.0–v1.3 and don't have the command yet? Run the installer one-liner from step 3 once; it installs both `shotgun-init` and `shotgun-upgrade`. Upgrading from v1.0/v1.1 also migrates your learned skills from the old `skills/` location automatically.
+
 ## 4. First session: onboarding
 
 Boot up your AI agent in the directory where you ran `shotgun-init` (e.g., run `claude` in terminal, open the folder in Cursor, or launch Antigravity).

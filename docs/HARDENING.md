@@ -59,7 +59,7 @@ If your AI coding agent keeps prompting for the same safe operations, allow them
 
 ## 5. Model choice
 
-The loop runs on any capable frontier model by design. If you use multiple: use stronger models (e.g., Opus, GPT-4o) for DECIDE-heavy and REVIEW-heavy sessions, and faster models (e.g., Sonnet, GPT-4o-mini, Gemini Flash) for BUILD/ORGANIZE grinding. Memory files make the switch free; nothing lives in the conversation.
+The loop runs on any capable frontier model by design. If you use multiple: use stronger models (e.g., Claude Opus, GPT-5 class) for DECIDE-heavy and REVIEW-heavy sessions, and faster models (e.g., Claude Sonnet or Haiku, GPT-5 mini class, Gemini Flash) for BUILD/ORGANIZE grinding. Memory files make the switch free; nothing lives in the conversation.
 
 ## 6. If you push anywhere, push private
 

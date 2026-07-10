@@ -49,3 +49,14 @@ Confirm every agent entry point exists and points at the loop: `AGENTS.md`, `CLA
 ## Report format (strict)
 
 One line per check, numbered, ✅ / ⚠️ / ❌ plus a five-word status. Then: fixes applied (list), fixes needing a yes (list), and one overall verdict line. A fully green report should be one screen, not an essay. Log the checkup as one line in `memory/journal.md`.
+
+## The Health Score (ends every checkup)
+
+One number a founder can watch move month to month. Compute it transparently:
+
+1. **System integrity (0–60):** start at 60, subtract per finding: ❌ = −15, ⚠️ = −5. Floor at 0.
+2. **Momentum (0–40):** from the last 4 weeks of `memory/metrics.md` and `memory/journal.md`: north-star metric trending up (+15, flat +7, down 0), loops closed ≥ loops opened (+10), at least one experiment or growth verdict logged (+10), decisions pending revisit ≤ 1 (+5).
+3. Report as: `HEALTH: NN/100 (system NN/60, momentum NN/40), <one-line read>`. Compare against the previous score and name the biggest mover.
+4. Append one dated line to `memory/metrics.md` ad-hoc section: `YYYY-MM-DD: health score NN/100`. The score is itself a tracked metric; a falling score is a revisit trigger a founder can set.
+
+Bounds: the score summarizes the checks, it never replaces them. A 95 with a leaked secret does not exist: any secret finding caps the score at 25 until resolved.
