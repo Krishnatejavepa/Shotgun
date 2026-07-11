@@ -24,7 +24,12 @@ Not a chatbot. Not a coding tool. An operating system for running a company of o
 - 👥 **The Panel.** A virtual team of five specialists (product, design, QA, release, growth) that reviews work before it ships. Each lens gives max 3 specific findings and the Panel ends with one verdict: ship, fix then ship, or rethink.
 - 🩺 **A doctor for itself.** A monthly checkup audits the memory index, loop registry, vault hygiene, git safety, and secret leaks. A cofounder that quietly rots is worse than none.
 - 🧳 **Portable by design.** One command exports your entire cofounder (memory, vault, skills) as a bundle, secrets excluded and verified. Import your Obsidian vault, Notion export, or ChatGPT history on day one. Move machines without losing a single memory.
-- 🏁 **Starter templates.** SaaS, creator, agency, and e-commerce skeletons that pre-shape your venture profile, vault taxonomy, and the numbers that matter for your business type.
+- 🗺️ **A company roadmap.** Idea → Setup → Identity → Build → Go-to-market → Launch → Scale, staged steps checked off on evidence, never on vibes. "Where am I?" always has an answer, and so does "what should the company do next".
+- 🤝 **Sales as a lane, not a vibe.** ICP definition, sourced prospect research, a files-first CRM (accounts + pipeline), outreach drafted in your voice, call prep, negotiation options, close checklists. Nothing invented, every send gated on you.
+- 🎨 **A brand system.** A 10-minute interview becomes `vault/brand/DESIGN.md`: palette, type, spacing, do/don't. Everything visual reads it first, so your landing page, deck, and social assets stop looking like three different companies.
+- ⏰ **Routines.** Recurring jobs with a cadence, run-criteria, and last-run state, checked at every standup. Your cofounder proposes one when it notices work repeating; only you approve.
+- 🧱 **Stack & monetize, founder-owned.** Guided, verified setup for hosting, staging→prod publishing, domains, transactional email, database, analytics, and the full Stripe recipe (test mode → verified webhook → gated go-live). Status lives in one block you can read.
+- 🏁 **Starter templates.** SaaS, creator, agency, and e-commerce skeletons that pre-shape your venture profile, vault taxonomy, roadmap emphasis, sales lane, and the numbers that matter for your business type.
 
 ## Requirements
 
@@ -74,6 +79,10 @@ From then on, every session starts with it reading its memory. Try:
 - `"Fix this scraper, keep going until it runs clean"` runs alone and reports verified-done or the exact blocker
 - `"Is this landing page ready?"` convenes the Panel: five specialist reviews and one verdict
 - `"Checkup"` audits the whole system and reports one line per check
+- `"Where am I on the roadmap?"` gets your stage, the newly unlocked steps, and ONE recommended next move
+- `"Define my ICP and find me 15 prospects"` gets a recorded decision, sourced accounts, and a pipeline in files
+- `"Set up my brand"` gets a 10-minute interview and a DESIGN.md that everything visual follows from then on
+- `"Set up Stripe"` gets the test-mode recipe, a verified webhook, and a go-live that waits for your yes
 
 ## How it works
 
@@ -83,8 +92,9 @@ shotgun/
 ├── AGENTS.md             # Universal entry point (the AGENTS.md standard, 28+ tools)
 ├── .shotgun/skills/      # Workflows: onboard, build, write, organize-data, decide,
 │                        #   idea-refine, spar, finance, legal, support, data-hook,
-│                        #   research, grow, daily, loop, experiment, review, port,
-│                        #   doctor (+ 24 engineering skills + learned-* skills)
+│                        #   research, grow, sell, design, roadmap, stack, daily,
+│                        #   loop, experiment, review, port, doctor
+│                        #   (+ 24 engineering skills + learned-* skills)
 ├── .shotgun/commands/    # Slash commands for the development lifecycle (/build, /test, etc.)
 ├── .shotgun/agents/      # Specialist personas (e.g. Code Reviewer, Security Auditor)
 ├── memory/              # The compounding asset: profile, venture, voice, metrics,
@@ -127,7 +137,7 @@ They win on 24/7 availability and channels. Shotgun wins on judgment, focus, and
 - [Memory format spec](docs/MEMORY-FORMAT.md), the open Cofounder Memory Format (CMF) any tool can read/write
 - [Contributing](CONTRIBUTING.md), how to add skills, templates, and war stories
 - [Governance](GOVERNANCE.md), how decisions get made and what will never merge
-- [Changelog](CHANGELOG.md), what changed in v1.5
+- [Changelog](CHANGELOG.md), what changed in v1.6
 
 ## License
 

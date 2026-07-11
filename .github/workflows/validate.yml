@@ -72,7 +72,7 @@ jobs:
           target=$(mktemp -d)
           cd "$target"
           bash -c "source $HOME/.bashrc && shotgun-init"
-          for p in SHOTGUN.md AGENTS.md .shotgun/skills/onboard/SKILL.md memory/README.md memory/_templates/founder-profile.md vault/VAULT-GUIDE.md templates/saas.md docs/ARCHITECTURE.md; do
+          for p in SHOTGUN.md AGENTS.md .shotgun/skills/onboard/SKILL.md .shotgun/skills/roadmap/SKILL.md .shotgun/skills/sell/SKILL.md .shotgun/skills/design/SKILL.md .shotgun/skills/stack/SKILL.md memory/README.md memory/_templates/founder-profile.md memory/_templates/roadmap.md memory/_templates/routines.md vault/VAULT-GUIDE.md templates/saas.md docs/ARCHITECTURE.md; do
             [ -e "$p" ] || { echo "::error::shotgun-init did not scaffold $p"; exit 1; }
           done
           echo "shotgun-init scaffold verified."

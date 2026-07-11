@@ -11,8 +11,10 @@ vault/
 ├── data/              # structured data: cleaned CSVs, exports, the canonical datasets
 │   └── SCHEMAS.md     # column definitions for every dataset
 ├── customers/         # customer lists, conversations, testimonials, support threads
+├── crm/               # the sales lane: accounts.md + pipeline.md (see the sell skill)
+├── brand/             # DESIGN.md (the visual system) + brand assets (see the design skill)
 ├── product/           # specs, designs, screenshots, feature docs, roadmaps
-├── marketing/         # copy, posts, launch plans, brand assets, analytics exports
+├── marketing/         # copy, posts, launch plans, analytics exports
 ├── finance/           # invoices, expenses, projections, pricing docs
 ├── legal/             # incorporation, contracts, terms, agreements
 ├── research/          # market research, competitor notes, user interviews
@@ -28,6 +30,10 @@ Add subfolders when a folder exceeds ~20 files; never force a file into a wrong 
 ## Canonical data rule
 
 When multiple files describe the same thing (three customer lists, two pricing sheets), ONE file is marked canonical in `_index.md` with ⭐. All edits go to the canonical file; the rest get archived. This is what "single source of truth" means in practice.
+
+## Pinned files
+
+The files the founder returns to constantly get a line in the `📌 Pinned` section at the top of `_index.md`. Pinning is pure visibility: the file stays in its normal folder, nothing else changes. Pin sparingly; a pinned-everything index pins nothing.
 
 ## The inbox rule
 

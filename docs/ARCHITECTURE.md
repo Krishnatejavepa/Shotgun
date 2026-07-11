@@ -9,7 +9,8 @@
 │  SHOTGUN.md: the operating loop           │  ← the contract; deterministic checklists
 ├──────────────────────────────────────────┤
 │  .shotgun/skills/: workflow modules       │  ← onboard, build, write, organize-data,
-│    (+ learned-*: self-written)           │    decide, research, grow, daily, loop,
+│    (+ learned-*: self-written)           │    decide, research, grow, sell, design,
+│                                          │    roadmap, stack, daily, loop,
 │                                          │    experiment, review, port, doctor
 ├──────────────────────────────────────────┤
 │  State (plain markdown + git)            │
@@ -25,7 +26,7 @@ The single biggest design constraint: **the loop must run identically on any cap
 
 1. **MUST-marked checklists, not judgment calls.** "Read memory/founder-profile.md at session start. MUST." leaves nothing to model personality.
 2. **Numbered sequences with explicit ordering.** Weaker models follow sequences reliably; only interpretation varies, so interpretation is minimized.
-3. **Exact request classification.** Every founder message maps to exactly one of eighteen classes (QUICK/BUILD/WRITE/ORGANIZE/PORT/DECIDE/IDEA/SPAR/FINANCE/DATA-HOOK/LEGAL/SUPPORT/RESEARCH/GROW/DAILY/LOOP/EXPERIMENT/REVIEW), each with its own skill file. No ambient behavior.
+3. **Exact request classification.** Every founder message maps to exactly one of twenty-two classes (QUICK/BUILD/WRITE/ORGANIZE/PORT/DECIDE/IDEA/SPAR/FINANCE/DATA-HOOK/LEGAL/SUPPORT/RESEARCH/GROW/SELL/DESIGN/ROADMAP/STACK/DAILY/LOOP/EXPERIMENT/REVIEW), each with its own skill file. No ambient behavior.
 4. **State in files, not in context.** The model can be swapped mid-week; the new model reads the same memory and continues. Nothing important lives only in a conversation.
 5. **Self-verification steps.** "Run the code before delivering", "announce every memory save", outputs are checkable, so drift is visible and correctable. The doctor skill audits the whole system monthly.
 

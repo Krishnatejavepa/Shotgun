@@ -26,6 +26,14 @@
 
 MRR and its delta, trial→paid conversion, churn, and ONE activation metric the founder picks. Ignore vanity totals.
 
+## Roadmap emphasis (shapes memory/roadmap.md)
+
+Build and Go-to-market are the heavy stages. Payments (stack skill, Stripe recipe) belongs in Launch, not later: a SaaS that can't charge is a demo. Add a step "3 design partners using it weekly" to Build; it predicts everything after.
+
+## Sales lane (shapes vault/crm/)
+
+Self-serve trials are GROW; the sell skill earns its keep on design partners, annual deals, and anything with a human decision-maker. Pipeline stages tweak to: `lead → trial → activated → call → paying | churned (reason)`.
+
 ## Typical first open loops
 
 - Pricing page says X but Stripe charges Y, reconcile

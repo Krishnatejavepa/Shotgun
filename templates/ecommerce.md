@@ -26,6 +26,14 @@
 
 Revenue, contribution margin after ads (the honest number), AOV, and repeat purchase rate. Revenue without margin is a vanity metric with shipping costs attached.
 
+## Roadmap emphasis (shapes memory/roadmap.md)
+
+The Build stage means the store and the supply chain, not custom software. If the platform handles checkout (Shopify, Etsy, Gumroad), mark STACK STATUS payments as `n/a (platform)` and spend the saved time on the Go-to-market stage: traffic is the whole game here.
+
+## Sales lane (shapes vault/crm/)
+
+B2C orders don't belong in a CRM. The sell skill covers the deals that ARE human-to-human: wholesale accounts, influencer partnerships, supplier negotiations. Stages: `lead → conversation → terms → active | dead (reason)`.
+
 ## Typical first open loops
 
 - Ad spend and revenue live in different dashboards, no single margin view exists

@@ -17,7 +17,7 @@ The memory index is auto-loaded below. If your harness did not inline it, read i
 @memory/MEMORY.md
 
 1. Read `memory/founder-profile.md` ONLY if doing a WRITE, DECIDE, SPAR, or IDEA task. DO NOT read for routine tasks.
-2. Read `memory/venture.md` ONLY if doing a BUILD, GROW, DECIDE, FINANCE, or LEGAL task.
+2. Read `memory/venture.md` ONLY if doing a BUILD, GROW, DECIDE, FINANCE, LEGAL, SELL, STACK, or ROADMAP task.
 3. Check `memory/open-loops.md` ONLY for DAILY standups or when updating loops.
 4. If `memory/founder-profile.md` does not exist → the system is not onboarded. Stop and run the onboarding skill (`.shotgun/skills/onboard/SKILL.md`). Do nothing else first.
 
@@ -38,7 +38,11 @@ For every founder request, classify it as exactly one of:
 - **LEGAL**: country-centric legal advice, privacy policies, terms of service, compliance, and incorporation. Follow `.shotgun/skills/legal/SKILL.md`.
 - **SUPPORT**: triaging user feedback, bugs, complaints, or drafting replies. Follow `.shotgun/skills/support/SKILL.md`.
 - **RESEARCH**: questions about the outside world: market, competitors, customers, "what exists for X". Follow `.shotgun/skills/research/SKILL.md`.
-- **GROW**: distribution, launches, marketing channels, "how do I get users". Follow `.shotgun/skills/grow/SKILL.md`.
+- **GROW**: distribution, launches, marketing channels, "how do I get users". Follow `.shotgun/skills/grow/SKILL.md`. (Selling to specific named prospects is SELL.)
+- **SELL**: sales execution to identified humans: ICP, prospecting, pipeline, outreach drafts, call prep, negotiation, closing, "find me customers". Follow `.shotgun/skills/sell/SKILL.md`. (Broad attention and channels are GROW.)
+- **DESIGN**: visual identity and brand-consistent assets: "set up my brand", palette, typography, logo direction, visual briefs, "make it look consistent". Follow `.shotgun/skills/design/SKILL.md`. (Writing voice is WRITE; UI implementation is BUILD.)
+- **ROADMAP**: the company-building path: "where am I", "what's next for the company", "show the roadmap", marking milestones. Follow `.shotgun/skills/roadmap/SKILL.md`. ("What's next today" is DAILY; ROADMAP is the months-long path.)
+- **STACK**: company infrastructure and monetization rails: hosting, deploys, domains, DNS, transactional email, database, Stripe payments, analytics wiring, "set up payments", "get this live". Follow `.shotgun/skills/stack/SKILL.md`. (Writing the app itself is BUILD.)
 - **DAILY**: standup, planning, weekly progress check-in, "what's next", "how's it going", "generate weekly plan", "run my CEO weekly". Follow `.shotgun/skills/daily/SKILL.md`. (Critique of a specific piece of work is REVIEW, not DAILY. "Checkup" / "health check" runs `.shotgun/skills/doctor/SKILL.md`.)
 - **LOOP**: delegated autonomous work toward a done-condition: "loop on this", "keep going until it works". Follow `.shotgun/skills/loop/SKILL.md`.
 - **EXPERIMENT**: metric optimization with no finish line: "make X faster/better/cheaper", "optimize this". Follow `.shotgun/skills/experiment/SKILL.md`.
@@ -146,4 +150,4 @@ When the founder asks to optimize something measurable ("make it faster"):
 
 ---
 
-*Shotgun v1.5, the loop above is the contract. Everything else in this repo (skills, memory, vault) plugs into it.*
+*Shotgun v1.6, the loop above is the contract. Everything else in this repo (skills, memory, vault) plugs into it.*

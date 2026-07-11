@@ -1,5 +1,46 @@
 # Changelog
 
+## v1.6 (2026-07-11)
+
+The theme: from builder to company. Shotgun now runs the parts of a business that happen outside the editor — the company roadmap, the sales pipeline, the brand, the recurring work, and the rails money moves on — the same way it has always run the build: files-first, founder-owned, checked off on evidence. Four new request classes; the loop grows from 18 to 22.
+
+**The Company Roadmap (new ROADMAP class)**
+
+- `memory/roadmap.md`: the staged company-building path (Idea → Setup → Identity → Build → Go-to-market → Launch → Scale → Mature). Steps carry a status (locked/available/in-progress/done), an owner class, and an evidence line: nothing gets checked off on vibes, only on evidence just re-read. Unlocks are computed and announced. Onboarding offers to generate it pre-marked from stack detection; the weekly review scans it; the Morning Brief names the company's next step alongside today's ONE thing. Starter templates shape it per vertical.
+
+**Sales & the CRM (new SELL class)**
+
+- The sell skill: ICP definition (recorded as a decision with a revisit trigger), sourced prospecting, outreach drafted in the founder's voice, call prep, negotiation options, close and post-close checklists. Hard rules: never invent an account, contact, reply, or stage; every send is §3.3-gated.
+- `vault/crm/`: `accounts.md` (one block per account, activity log, next step in ruthless format) and `pipeline.md` (one line per opportunity). The weekly pulse gains a pipeline line; stale opportunities (14+ days) get flagged.
+
+**The brand system (new DESIGN class)**
+
+- The design skill: a 10-minute brand-kit interview producing `vault/brand/DESIGN.md`, the visual sibling of `memory/voice.md`: vibe, palette (hex), type, spacing, component rules, imagery direction, do/don't. Build, grow, and write now read it before producing anything visible. Git history is the kit archive; brand refreshes route through DECIDE. Onboarding gains a skippable one-question seed (Phase 4.5).
+
+**Routines**
+
+- `memory/routines.md`: the registry of recurring work: cadence, optional run-criteria, last run + result, next focus, active/paused. The standup checks due routines (MUST when the file exists); paused ones get listed monthly so they don't rot. The agent may propose a routine when it notices repeating work, same discipline as learned skills: offer once, founder approves. Standup, weekly review, and the monthly checkup now live in the registry too.
+
+**Stack & monetize (new STACK class)**
+
+- The stack skill: guided, verified, founder-owned setup for hosting with staging→prod publishing (main → prod PR flow), database (SQLite first, Supabase when real), domain + DNS, transactional email (SPF/DKIM checklists, no warming games), analytics (one privacy-light tool, one number wired to metrics), and the full Stripe recipe: test/live key separation in `.env` only, a signature-verifying webhook route, test-card verification before any real money, go-live behind §3.3.
+- STACK STATUS block in `memory/venture.md`: hosting/database/domain/email/payments/analytics, each ready/pending/n/a, updated only on verification. Onboarding seeds it from stack detection; the doctor flags items pending 30+ days when the roadmap stage needs them.
+
+**Library upgrades**
+
+- Reusable scripts: `workspace/scripts/`, one job per file, `--input <path>` convention, registered in the new Scripts section of `vault/_index.md`. Same filename = update in place, never a `_v2_final`. Organize-data and build both route through it.
+- Pinned files: a `📌 Pinned` section atop `vault/_index.md` for the files the founder returns to constantly. Pure visibility, doctor-checked for dangling pins.
+- Needs-action ordering: the Morning Brief now lists work waiting on the FOUNDER first, tagged NEEDS-YOU. Founders clear their own bottlenecks before anything else.
+
+**Deliberately not copied from the cloud platforms**
+
+- Managed provisioning, hosted agent email inboxes, inbox warming, brokered secrets, in-app domain purchase. All violate the constraint contract (no servers, no databases, no accounts) or the founder's interests (warming games, spray outreach). The guided-recipe versions above are the local-first translations.
+- Parked for v1.7: the "hire an agent" scaffold (custom persona + skill + routine as one bundle).
+
+## v1.5.1 (2026-07-11)
+
+- **Health Score trend line**: every doctor checkup now prints the last 5 scores oldest-first (`TREND: 90 → 81 → 74 → 62 → 62 (falling)`) with a one-word slope: rising, stable, or falling. A single 62 says little; a 90→62 slide over three checkups is a different conversation, so the checkup volunteers the slide instead of waiting to be asked. Health-score revisit triggers on decisions are now also checked at score time, not just during the vault scan. (Prompted by launch feedback: a score that only reports the latest number is easy to ignore under pressure.)
+
 ## v1.5 (2026-07-10)
 
 The theme: compounding depth. Smarter first contact, richer rituals, an open memory standard.

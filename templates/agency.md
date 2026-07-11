@@ -17,7 +17,7 @@
 ## Vault taxonomy that fits agencies
 
 - `vault/clients/`: one subfolder per client: contracts, briefs, deliverables, meeting notes
-- `vault/pipeline/`: leads, proposals sent, win/loss notes
+- `vault/crm/`: accounts.md + pipeline.md (the sell skill's home), proposals sent, win/loss notes
 - `vault/playbooks/`: how the service gets delivered (these become learned skills fast)
 - `vault/finance/`: invoices, aging report, rate history
 - `vault/marketing/`: case studies, portfolio pieces, outreach templates
@@ -25,6 +25,14 @@
 ## Numbers that matter
 
 Pipeline value vs monthly target, revenue concentration (top client %), utilization, and invoice aging. The concentration number is the one founders avoid looking at; surface it monthly.
+
+## Roadmap emphasis (shapes memory/roadmap.md)
+
+For services, SELL is the product: the Go-to-market stage comes before Build (there is nothing to build until someone pays). Identity matters early (credibility sells services), and the Scale stage adds "playbooks become learned skills" so delivery stops depending on the founder's memory.
+
+## Sales lane (shapes vault/crm/)
+
+The sell skill IS the agency's core loop. Stages tweak to: `lead → conversation → proposal → negotiation → won | lost (reason)`. Proposal follow-ups get a next-step date the day they're sent; the weekly pipeline pulse is the most important line in the review.
 
 ## Typical first open loops
 

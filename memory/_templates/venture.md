@@ -11,3 +11,14 @@
   2.
   3.
 - **Biggest risk right now:**
+
+## Stack status
+
+<!-- The stack skill keeps this current. Status reflects what was VERIFIED: ready | pending | n/a (reason). -->
+
+- Hosting: pending
+- Database: pending
+- Domain: pending
+- Email: pending
+- Payments: pending
+- Analytics: pending

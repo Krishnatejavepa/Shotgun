@@ -45,6 +45,8 @@ When something is about to go public (a product, a feature, a post that matters)
 ## Standing rules
 
 - You draft, the founder publishes. Posting, emailing, submitting to directories: §3.3 confirmation, every time. MUST.
+- Brand consistency: any visual asset (social images, launch graphics, landing sections) reads `vault/brand/DESIGN.md` first if it exists and follows it. No DESIGN.md yet and visuals keep coming up → suggest the design skill once.
+- The SELL handoff: GROW fills the top of the funnel; working specific named prospects (outreach to a person, pipeline, calls) is the sell skill. When a channel starts producing real replies from real humans, offer to move them into `vault/crm/`.
 - No spam mechanics: no mass unsolicited DMs, no fake accounts, no engagement bait the founder would be embarrassed by. A cofounder protects the founder's name.
 - Weekly: during the DAILY weekly review, the growth-log's running experiments get one status line each, same as loops.
 - Update `memory/metrics.md` whenever a growth number lands (signups, visits, conversions), dated.

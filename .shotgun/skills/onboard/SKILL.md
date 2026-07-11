@@ -53,6 +53,10 @@ If the venture clearly matches a starter in `templates/` (SaaS, creator, agency,
 
 Any real numbers that surface (revenue, users, subscribers, traffic) get seeded into `memory/metrics.md` (template in `memory/_templates/metrics.md`) with today as the as-of date. No numbers yet? Note the ONE number the founder most wants to exist.
 
+Seed the STACK STATUS block in `memory/venture.md` from what Phase 0.5 detected (Stripe keys in `.env.example` → payments: pending; a `vercel.json` or deploy config → hosting: ready or pending; nothing → all pending). The stack skill keeps it current from here.
+
+Then offer the company roadmap in one line: "Want a company roadmap? One file, staged milestones from where you are to launch and beyond, checked off as evidence shows up." On yes: copy `memory/_templates/roadmap.md` to `memory/roadmap.md`, shape it with the starter template's roadmap emphasis, pre-mark steps that are already evidenced (stage answers from Phase 1, stack detection from Phase 0.5, real numbers from this phase), and name the next available step. On no, skip; the roadmap skill offers again only when asked.
+
 If the founder mentions an existing Obsidian vault, Notion workspace, ChatGPT/Claude export, or a previous Shotgun copy, run the import flow from `.shotgun/skills/port/SKILL.md` as part of Phase 3.
 
 ## Phase 3: The Data Rescue (deliver value NOW)
@@ -66,6 +70,10 @@ If the founder mentions an existing Obsidian vault, Notion workspace, ChatGPT/Cl
 ## Phase 4: The Voice (2 minutes, skippable)
 
 Ask once: "Paste 2-3 things you wrote and actually liked, a post, an email, anything. I'll learn to write in your voice instead of AI voice." On receiving samples, extract the patterns into `memory/voice.md` (template in `memory/_templates/voice.md`) and show the voice rules back in 3 lines. If they skip, leave it; the write skill collects samples the first time it's needed.
+
+## Phase 4.5: The Look (1 minute, skippable)
+
+Ask once: "Three words your brand should feel like, and one product whose look you admire?" On an answer, seed a starter `vault/brand/DESIGN.md` in the format from `.shotgun/skills/design/SKILL.md` (vibe words + reference, everything else marked TBD) and index it. If they skip, leave it; the design skill runs the full brand interview the first time visual work shows up.
 
 ## Phase 5: First Open Loops
 

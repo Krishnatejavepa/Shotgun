@@ -20,6 +20,8 @@ A CMF store is a directory named `memory/` containing:
 | `feedback.md` | optional | Corrections from the founder, with why |
 | `changelog.md` | optional | One line per shipped thing; `[external]` tags mark confirmed irreversible actions |
 | `journal.md` | yes (post-onboarding) | One ≤2-sentence entry per session, date-prefixed |
+| `roadmap.md` | optional (v1.6+) | The staged company-building path: steps with status, owner class, and evidence line |
+| `routines.md` | optional (v1.6+) | Registry of recurring work: cadence, criteria, last run, active/paused |
 | `README.md` | recommended | The store's own protocol documentation |
 | `_templates/` | optional | Blank skeletons; never counted as memories |
 

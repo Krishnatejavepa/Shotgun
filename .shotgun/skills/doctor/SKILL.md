@@ -18,12 +18,16 @@ A cofounder that quietly rots is worse than none: stale loops, a lying index, a 
 1. Every `LOOP:` line in `memory/open-loops.md` points to a LOOP.md that exists, and the registry status matches the file's STATUS line. Fix drift toward the file (it's the source of truth).
 2. Open loops older than 7 days get listed for the founder: finish, kill, or consciously park each.
 3. Growth experiments in `vault/marketing/growth-log.md` past their time box without a verdict → flag them.
+4. If `memory/routines.md` exists: any active routine whose Last run is more than 2× its cadence ago → flag it (run it, pause it honestly, or delete it). If `vault/crm/pipeline.md` exists: opportunities with no activity for 14+ days → flag as stale.
+5. If `memory/roadmap.md` exists: any step `in-progress` with no matching open loop → flag as stalled.
 
 ## Check 3: Vault hygiene
 
 1. `vault/inbox/` has ≤10 files. Over → offer to run organize-data now.
 2. Spot-check 5 random vault files against `vault/_index.md`: each must have an index line. Misses → offer a reindex.
 3. Decisions in `memory/decisions.md`: scan REVISIT WHEN triggers against current `memory/venture.md` and `memory/metrics.md`. Any tripped trigger → surface it as a pending re-decision.
+4. Every line in the `📌 Pinned` and `Scripts` sections of `vault/_index.md` points to a file that exists. Dangling → fix the line or flag the missing file.
+5. STACK STATUS in `memory/venture.md`: any item `pending` for 30+ days while the roadmap stage needs it → surface it once ("payments has been pending for 6 weeks and you're in the Launch stage").
 
 ## Check 4: Git safety
 
@@ -57,6 +61,7 @@ One number a founder can watch move month to month. Compute it transparently:
 1. **System integrity (0–60):** start at 60, subtract per finding: ❌ = −15, ⚠️ = −5. Floor at 0.
 2. **Momentum (0–40):** from the last 4 weeks of `memory/metrics.md` and `memory/journal.md`: north-star metric trending up (+15, flat +7, down 0), loops closed ≥ loops opened (+10), at least one experiment or growth verdict logged (+10), decisions pending revisit ≤ 1 (+5).
 3. Report as: `HEALTH: NN/100 (system NN/60, momentum NN/40), <one-line read>`. Compare against the previous score and name the biggest mover.
-4. Append one dated line to `memory/metrics.md` ad-hoc section: `YYYY-MM-DD: health score NN/100`. The score is itself a tracked metric; a falling score is a revisit trigger a founder can set.
+4. **The trend line (MUST, whenever history exists):** grep past `health score` lines from `memory/metrics.md`, take the last 5, and print them oldest-first as one line: `TREND: 90 → 81 → 74 → 62 → 62 (falling)`. Label the slope in one word: rising, stable, or falling (stable = every step within ±3). A single 62 says little; a 90→62 slide over three checkups is a different conversation, so the checkup volunteers the slide instead of waiting to be asked. If a decision in `memory/decisions.md` has a health-score revisit trigger, check it against the new score here, not just in Check 3.
+5. Append one dated line to `memory/metrics.md` ad-hoc section: `YYYY-MM-DD: health score NN/100`. The score is itself a tracked metric; a falling score is a revisit trigger a founder can set.
 
 Bounds: the score summarizes the checks, it never replaces them. A 95 with a leaked secret does not exist: any secret finding caps the score at 25 until resolved.

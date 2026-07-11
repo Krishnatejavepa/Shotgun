@@ -26,6 +26,14 @@
 
 Subscriber delta per week, one engagement rate per channel, revenue per stream, and email list growth (the only audience you own). Follower totals are vanity; deltas are signal.
 
+## Roadmap emphasis (shapes memory/roadmap.md)
+
+Identity and Go-to-market are the heavy stages; the Build stage means content systems (calendar, formats, repurposing), not a product. The Launch stage repeats per major piece; treat each big drop as a mini-launch via the grow skill.
+
+## Sales lane (shapes vault/crm/)
+
+Sponsors and brand deals run through the sell skill: each sponsor is an account in `vault/crm/`, stages `lead → pitched → negotiating → booked | passed (reason)`. The rate card stays in `vault/sponsors/`; no deal gets quoted without it.
+
 ## Typical first open loops
 
 - Idea backlog lives in 4 places, consolidate into pipeline

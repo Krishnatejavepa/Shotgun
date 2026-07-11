@@ -55,3 +55,5 @@ Both paths:
 - **Tech debt honesty:** when you take a shortcut, log it in the project README under "Debt". Never silently.
 - **Git remotes:** before any `git push`, run `git remote -v` and confirm the founder owns the destination. Never push to the public Shotgun repo. MUST.
 - **Licensing:** never copy Shotgun's LICENSE into a founder's project. Their code is theirs; add a license only if they ask for one.
+- **Reusable scripts:** a one-off helper that will plausibly run again goes in `workspace/scripts/`, takes `--input <path>`, and gets a line in the Scripts section of `vault/_index.md` (full convention in the organize-data skill). Check that section before writing a script that might already exist.
+- **Brand consistency:** anything user-facing being built (landing page, UI, emails) reads `vault/brand/DESIGN.md` first if it exists and follows its tokens. Deviations get stated, not slipped in.
