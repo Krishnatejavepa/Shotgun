@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.6.1 (2026-07-11)
+
+README redesign. No functional changes.
+
+- New layout: centered banner (`assets/banner.png`) and animated terminal demo (`assets/terminal.gif`), Quickstart moved to the top, condensed 12-bullet feature list, compatibility badge row, and a general-assistant comparison table.
+- New `assets/` directory for README imagery.
+- All content rewritten from the v1.6 README — install commands, structure tree, philosophy, and doc links unchanged in substance.
+
 ## v1.6 (2026-07-11)
 
 The theme: from builder to company. Shotgun now runs the parts of a business that happen outside the editor — the company roadmap, the sales pipeline, the brand, the recurring work, and the rails money moves on — the same way it has always run the build: files-first, founder-owned, checked off on evidence. Four new request classes; the loop grows from 18 to 22.

@@ -150,4 +150,4 @@ When the founder asks to optimize something measurable ("make it faster"):
 
 ---
 
-*Shotgun v1.6, the loop above is the contract. Everything else in this repo (skills, memory, vault) plugs into it.*
+*Shotgun v1.6.1, the loop above is the contract. Everything else in this repo (skills, memory, vault) plugs into it.*

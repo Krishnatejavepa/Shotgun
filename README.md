@@ -1,143 +1,131 @@
-# Shotgun
+<p align="center">
+  <img src="assets/banner.png" alt="Shotgun — Your AI Cofounder" width="100%">
+</p>
 
-**Don't Build Alone. Let Shotgun Ride Along.**
+<p align="center">Don't Build Alone. Let Shotgun Ride Along.</p>
 
-Shotgun turns your AI agent into a persistent, personalized cofounder for solo founders. It remembers everything about you and your venture, builds your product, writes in your voice, organizes your scattered data into one clean vault, scouts your market, runs your distribution, and keeps your daily operating rhythm. Like a cofounder who owns half the company would.
+## Quickstart
 
-Not a chatbot. Not a coding tool. An operating system for running a company of one.
+Pick a plain local folder — not OneDrive/Dropbox/iCloud (cloud sync fights git, see [docs/HARDENING.md](docs/HARDENING.md)).
 
-## What it does
+### Install
 
-- 🧠 **Persistent memory.** Founder profile, venture state, every decision with its "why", open loops, session journal. It compounds: your cofounder knows your business better every single day.
-- 📊 **Your numbers, remembered.** A metrics file gets one dated row every weekly review. Momentum (or its absence) is visible across months, and decisions get revisited when the numbers you named actually trip.
-- 🔨 **Full technical execution.** Plans, codes, tests, ships. Verifies everything before handing it over. Logs shortcuts honestly.
-- ✍️ **Writing in YOUR voice.** It learns from samples of your real writing and drafts launch posts, emails, landing copy, and investor updates that sound like you, not like AI. When you edit its drafts, it learns why.
-- 🔎 **A scout for the outside world.** Market questions, competitor pricing, "what already exists for this": researched, dated, sourced, and filed where they stay useful. It says "couldn't verify" instead of guessing.
-- 📣 **Distribution as a system.** One channel at a time, growth experiments with hypotheses and kill-dates, launch checklists. Because silence kills more solo ventures than bugs do.
-- ⚖️ **Legal & Compliance.** Tracks your jurisdiction and visa status to automate localized privacy policies, incorporation roadmaps, and tax basics, strictly guarded by attorney disclaimers.
-- 🗄️ **Data vault.** Your scattered files, CSVs, and notes organized into one indexed, canonical structure. Nothing ever deleted, everything findable in seconds.
-- 🎯 **Cofounder judgment.** Pushes back on bad ideas once, then commits. Treats reversible and irreversible decisions differently. Protects your focus.
-- 📅 **Operating rhythm.** Daily standups, weekly reviews, one thing per day, zombie-loop detection, ruthless open loops, and automated weekly planning.
-- 📈 **Learned & Engineering skills.** Shotgun comes pre-equipped with 24 production-grade engineering skills (TDD, UI architecture, CI/CD, etc.) and specialist personas. When a custom multi-step task gets figured out, Shotgun saves the procedure and reuses it. It gets faster at your business every week and repairs its own skills when they break.
-- 🔁 **Autonomous loops.** Say "keep going until it works" and walk away. Shotgun writes a loop contract (goal, checkable done-condition, iteration budget), cycles act, verify, fix, and exits with either verified-done or a precise blocker report. Loop state lives in a file, so any session can resume it.
-- 🧪 **Experiment mode.** The Karpathy autoresearch pattern, applied to your business. "Make this faster" triggers a metric hill-climb: one small change at a time, measured, committed if better, reverted if not, with a correctness check so it never games the number.
-- 👥 **The Panel.** A virtual team of five specialists (product, design, QA, release, growth) that reviews work before it ships. Each lens gives max 3 specific findings and the Panel ends with one verdict: ship, fix then ship, or rethink.
-- 🩺 **A doctor for itself.** A monthly checkup audits the memory index, loop registry, vault hygiene, git safety, and secret leaks. A cofounder that quietly rots is worse than none.
-- 🧳 **Portable by design.** One command exports your entire cofounder (memory, vault, skills) as a bundle, secrets excluded and verified. Import your Obsidian vault, Notion export, or ChatGPT history on day one. Move machines without losing a single memory.
-- 🗺️ **A company roadmap.** Idea → Setup → Identity → Build → Go-to-market → Launch → Scale, staged steps checked off on evidence, never on vibes. "Where am I?" always has an answer, and so does "what should the company do next".
-- 🤝 **Sales as a lane, not a vibe.** ICP definition, sourced prospect research, a files-first CRM (accounts + pipeline), outreach drafted in your voice, call prep, negotiation options, close checklists. Nothing invented, every send gated on you.
-- 🎨 **A brand system.** A 10-minute interview becomes `vault/brand/DESIGN.md`: palette, type, spacing, do/don't. Everything visual reads it first, so your landing page, deck, and social assets stop looking like three different companies.
-- ⏰ **Routines.** Recurring jobs with a cadence, run-criteria, and last-run state, checked at every standup. Your cofounder proposes one when it notices work repeating; only you approve.
-- 🧱 **Stack & monetize, founder-owned.** Guided, verified setup for hosting, staging→prod publishing, domains, transactional email, database, analytics, and the full Stripe recipe (test mode → verified webhook → gated go-live). Status lives in one block you can read.
-- 🏁 **Starter templates.** SaaS, creator, agency, and e-commerce skeletons that pre-shape your venture profile, vault taxonomy, roadmap emphasis, sales lane, and the numbers that matter for your business type.
-
-## Requirements
-
-- Works on **any agent that reads the [AGENTS.md standard](https://agents.md)** (28+ tools: Codex CLI, Windsurf, Zed, Devin, Aider, Amp, Jules, and more), with first-class native wiring for **Claude Code, Cursor, Antigravity, Gemini CLI, and GitHub Copilot**.
-- The operating loop is written as explicit checklists, so any capable model (Claude Opus or Sonnet, GPT-5 class, Gemini 2.5 Pro or newer) executes it identically. No dependency on a specific model tier.
-
-## Quickstart (10 minutes)
-
-Pick a plain local folder, not OneDrive/Dropbox/iCloud (cloud sync fights git, see [docs/HARDENING.md](docs/HARDENING.md)).
-
-The easiest way to install Shotgun is via the **Global Installer**. This allows you to inject Shotgun into any existing codebase without cloning a separate repository.
-
-macOS/Linux:
+**macOS / Linux:**
 ```bash
-# Run this once to install the shotgun-init command
 curl -sSL https://raw.githubusercontent.com/Krishnatejavepa/Shotgun/main/install.sh | bash
 source ~/.zshrc
 ```
 
-Windows (PowerShell):
+**Windows (PowerShell):**
 ```powershell
-# Run this once to install the shotgun-init command
 iwr https://raw.githubusercontent.com/Krishnatejavepa/Shotgun/main/install.ps1 -UseBasicParsing | iex
 ```
 
-Once installed, simply open any project folder in your terminal and run:
+### Initialize
+
 ```bash
 shotgun-init
 ```
-This injects the full operating system into your directory: the `SHOTGUN.md` loop, `.shotgun/` skills, the memory and vault scaffolds with their templates, starter templates, docs, and every agent entry point (`AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules`, Copilot instructions). Existing files are never overwritten. The installer works from anywhere: it downloads Shotgun once to `~/.shotgun-os` (or uses your clone if you run it from one) and is safe to re-run for updates.
 
-Already running Shotgun (any version since v1.0)? `shotgun-upgrade` inside your folder brings the framework to the latest release, with your memory, vault, workspace, and learned skills untouched by contract and the old framework backed up first. CI tests this on every release.
+This injects the full operating system into any project folder — the `SHOTGUN.md` loop, `.shotgun/` skills, memory and vault scaffolds, starter templates, and every agent entry point. Existing files are never overwritten.
 
-Then boot up your preferred AI (e.g. `claude`, Cursor IDE, Antigravity, or Gemini) and just say **"hi"**. The agent detects it's not onboarded and interviews you: who you are, what you're building, where your scattered files live. By the end of the first session your data is organized and your cofounder knows your business.
+Then open your agent and say **"hi"**. Shotgun interviews you, indexes your data, and starts compounding from session one.
 
-From then on, every session starts with it reading its memory. Try:
+> Already running Shotgun? Run `shotgun-upgrade` to update — your memory, vault, workspace, and learned skills stay untouched by contract, and the old framework is backed up first. CI tests this on every release.
 
-- `"Good morning"` gets you a **Morning Intelligence Brief**: yesterday's burn, metrics checks, and today's ONE thing.
-- `"Build me a landing page for X"` gets planned, built, tested, delivered
-- `"Write the launch post"` gets drafted in your voice, from your real numbers
-- `"Draft a privacy policy"` gets a localized policy tailored to your country's laws.
-- `"Here is my Stripe CSV export"` triggers the Data Hook parser, updating your `metrics.md` automatically.
-- `"What do my three closest competitors charge?"` gets researched, sourced, dated, and filed
-- `"How do I get my first 100 users?"` gets one channel, a hypothesis, and a kill-date, not a listicle
-- `"Here are 3 messy customer CSVs, sort them out"` gets cleaned, merged, one canonical file
-- `"Should I do lifetime deals or subscriptions?"` gets a structured decision, recorded with a revisit trigger
-- `"Fix this scraper, keep going until it runs clean"` runs alone and reports verified-done or the exact blocker
-- `"Is this landing page ready?"` convenes the Panel: five specialist reviews and one verdict
-- `"Checkup"` audits the whole system and reports one line per check
-- `"Where am I on the roadmap?"` gets your stage, the newly unlocked steps, and ONE recommended next move
-- `"Define my ICP and find me 15 prospects"` gets a recorded decision, sourced accounts, and a pipeline in files
-- `"Set up my brand"` gets a 10-minute interview and a DESIGN.md that everything visual follows from then on
-- `"Set up Stripe"` gets the test-mode recipe, a verified webhook, and a go-live that waits for your yes
+<p align="center">
+  <img src="assets/terminal.gif" alt="Shotgun in the terminal" width="700">
+</p>
+
+## What it does
+
+Shotgun turns your AI agent into something that acts like it owns half the company. It reads its memory at the start of every session, picks up where it left off, and compounds what it knows about you, your product, and your market.
+
+- **Persistent memory** - Founder profile, venture state, every decision with its "why", metrics, open loops, session journal. It knows your business better every day.
+- **Full technical execution** - Plans, codes, tests, ships. 24 production-grade engineering skills built in. Verifies everything before handing it over.
+- **Writes in your voice** - Learns from samples of your real writing. Launch posts, emails, landing copy, and investor updates that sound like you.
+- **Autonomous loops** - Say "keep going until it works" and walk away. It writes a loop contract, cycles act–verify–fix, and exits verified-done or with a precise blocker report.
+- **Distribution and sales** - One channel at a time, growth experiments with hypotheses and kill-dates, ICP definition, sourced prospects, a files-first CRM, outreach in your voice, close checklists.
+- **Data vault** - Scattered files, CSVs, and notes organized into one indexed, canonical structure. Nothing ever deleted, everything findable.
+- **The Panel** - Five specialist personas (product, design, QA, release, growth) review work before it ships and end with one verdict: ship, fix then ship, or rethink.
+- **Cofounder judgment** - Pushes back on bad ideas once, then commits. Protects your focus. Treats reversible and irreversible decisions differently.
+- **Operating rhythm** - Daily standups, weekly reviews, one thing per day, a staged company roadmap checked off on evidence, routines, and zombie-loop detection.
+- **Legal and compliance** - Localized privacy policies, incorporation roadmaps, tax basics tracked to your jurisdiction. Attorney-disclaimed.
+- **Self-healing** - Learned skills that improve with use, plus a monthly checkup that audits memory, vault hygiene, git safety, and secret leaks.
+- **Portable** - Export your entire cofounder as a bundle, secrets excluded and verified. Import from Obsidian, Notion, or ChatGPT on day one.
 
 ## How it works
 
 ```
 shotgun/
-├── SHOTGUN.md            # The operating loop: read every session, followed exactly
+├── SHOTGUN.md            # The operating loop — read every session, followed exactly
 ├── AGENTS.md             # Universal entry point (the AGENTS.md standard, 28+ tools)
-├── .shotgun/skills/      # Workflows: onboard, build, write, organize-data, decide,
-│                        #   idea-refine, spar, finance, legal, support, data-hook,
-│                        #   research, grow, sell, design, roadmap, stack, daily,
-│                        #   loop, experiment, review, port, doctor
-│                        #   (+ 24 engineering skills + learned-* skills)
-├── .shotgun/commands/    # Slash commands for the development lifecycle (/build, /test, etc.)
-├── .shotgun/agents/      # Specialist personas (e.g. Code Reviewer, Security Auditor)
-├── memory/              # The compounding asset: profile, venture, voice, metrics,
-│                        #   decisions, loops, journal
-├── vault/               # Your organized business data, indexed and canonical
-├── templates/           # Starter shapes: SaaS, creator, agency, e-commerce
-├── workspace/           # Code projects the agent builds
-└── docs/                # Architecture, hardening, learned-skill format
+├── .shotgun/
+│   ├── skills/           # onboard, build, write, organize-data, decide, research,
+│   │                     # grow, sell, design, legal, finance, roadmap, stack, daily,
+│   │                     # loop, experiment, review, port, doctor + 24 eng skills
+│   ├── commands/         # /build, /test, /deploy
+│   └── agents/           # Specialist personas
+├── memory/               # Profile, venture, voice, metrics, decisions, loops, journal
+├── vault/                # Indexed, canonical business data
+├── templates/            # SaaS, creator, agency, e-commerce starters
+├── workspace/            # Code projects
+└── docs/                 # Architecture, hardening, learned-skill format
 ```
 
-Everything is plain markdown and git. No servers, no database, no lock-in. You can read every "thought" your cofounder has stored, edit it, or take it anywhere. Skills live in `.shotgun/skills/`. The `setup-compatibility` script symlinks this directory so that your platform of choice discovers them natively; the loop routes to them by explicit path so any capable harness works too. And the repo audits itself: a CI workflow validates every skill's frontmatter, every routing path, and the installer end-to-end on every push, the machine-checked half of the doctor skill.
+Everything is plain markdown and git. No servers, no database, no lock-in. You can read every "thought" your cofounder has, edit it, or take it anywhere. A CI workflow validates every skill's frontmatter, every routing path, and the installer end-to-end on every push.
 
-## Why not OpenClaw or Hermes Agent?
+## Compatibility
 
-Use them! They're excellent general personal assistants: always on, connected to WhatsApp and Telegram, automating everything for everyone. Shotgun is deliberately the opposite.
+Works on **any agent that reads the [AGENTS.md standard](https://agents.md)** - Codex CLI, Windsurf, Zed, Devin, Aider, Amp, Jules, and 20+ more.
 
-- **Vertical, not horizontal.** They're assistants for anyone. Shotgun is a cofounder for solo founders, with opinions: a decision log, ONE-thing days, a pushback rule, focus protection. An assistant does what you ask. A cofounder tells you when what you asked is a mistake.
-- **Your business data, handled.** Neither touches "my customers are in four spreadsheets." The vault does: canonical datasets, indexed, nothing ever deleted.
-- **No daemon, no attack surface.** They run always-on gateways bridged to messaging channels. Powerful, but a real injection surface. Shotgun only runs when you run it, and irreversible actions always require your confirmation. See [SECURITY.md](SECURITY.md).
+First-class native wiring for:
+
+<p align="center">
+  <a href="https://claude.ai"><img src="https://img.shields.io/badge/Claude_Code-supported-3B3B3B?labelColor=1A1A1A" alt="Claude Code"></a>
+  <a href="https://cursor.com"><img src="https://img.shields.io/badge/Cursor-supported-3B3B3B?labelColor=1A1A1A" alt="Cursor"></a>
+  <a href="https://gemini.google.com"><img src="https://img.shields.io/badge/Gemini_CLI-supported-3B3B3B?labelColor=1A1A1A" alt="Gemini CLI"></a>
+  <a href="https://github.com/features/copilot"><img src="https://img.shields.io/badge/GitHub_Copilot-supported-3B3B3B?labelColor=1A1A1A" alt="GitHub Copilot"></a>
+  <a href="https://idx.google.com"><img src="https://img.shields.io/badge/Antigravity-supported-3B3B3B?labelColor=1A1A1A" alt="Antigravity"></a>
+</p>
+
+The operating loop is explicit checklists - any capable model (Claude Opus/Sonnet, GPT-5 class, Gemini 2.5 Pro+) executes it identically. No dependency on a specific model tier.
+
+## Why Shotgun over a general assistant?
+
+General assistants like OpenClaw or Hermes Agent are excellent - always on, connected to messaging apps, automating everything for everyone. Shotgun is deliberately the opposite.
+
+| | General Assistants | Shotgun |
+|---|---|---|
+| **Scope** | Horizontal — for anyone | Vertical — for solo founders |
+| **Behavior** | Does what you ask | Pushes back when you're wrong |
+| **Data** | Chat history | Indexed vault, nothing deleted |
+| **Security** | Always-on daemon | Runs only when you run it |
+| **Memory** | Session-scoped | Compounds across months |
 
 They win on 24/7 availability and channels. Shotgun wins on judgment, focus, and depth for one specific job: running a company of one.
 
-*(Different tool, same name: [shotgun.sh](https://github.com/shotgun-sh/shotgun) is a spec-writing CLI for AI coding agents. Great at turning big features into staged PRs; not a cofounder. If you need both, they coexist fine: use it inside `workspace/` projects.)*
+*(Different tool, same name: [shotgun.sh](https://github.com/shotgun-sh/shotgun) is a spec-writing CLI for AI coding agents — not a cofounder. They coexist fine: use it inside `workspace/` projects.)*
 
 ## Philosophy
 
 1. **Memory is the product.** An assistant answers; a cofounder remembers why.
-2. **Checklists over vibes.** The loop is deterministic, so behavior stays consistent across models and months.
+2. **Checklists over vibes.** Deterministic loops, consistent across models and months.
 3. **Files over databases.** Inspectable, versionable, portable, yours.
-4. **Trust through verification.** Nothing is presented as done that wasn't run.
+4. **Trust through verification.** Nothing presented as done that wasn't run.
 5. **Distribution is half the company.** A cofounder who only builds is half a cofounder.
 
-## Docs
+## Documentation
 
-- [Getting started](GETTING-STARTED.md), the full setup walkthrough
-- [Security & trust model](SECURITY.md), why no-daemon matters
-- [Architecture](docs/ARCHITECTURE.md), how the loop, memory, and vault fit together
-- [Hardening](docs/HARDENING.md), optional setup: backups, hooks, permissions
-- [Learned skills](docs/LEARNED-SKILLS.md), how the cofounder writes and improves its own procedures
-- [Memory format spec](docs/MEMORY-FORMAT.md), the open Cofounder Memory Format (CMF) any tool can read/write
-- [Contributing](CONTRIBUTING.md), how to add skills, templates, and war stories
-- [Governance](GOVERNANCE.md), how decisions get made and what will never merge
-- [Changelog](CHANGELOG.md), what changed in v1.6
+- [Getting Started](GETTING-STARTED.md) - Full setup walkthrough
+- [Security and Trust Model](SECURITY.md) - Why no-daemon matters
+- [Architecture](docs/ARCHITECTURE.md) - Loop, memory, and vault internals
+- [Hardening](docs/HARDENING.md) - Backups, hooks, permissions
+- [Learned Skills](docs/LEARNED-SKILLS.md) - How the cofounder improves its own procedures
+- [Memory Format Spec](docs/MEMORY-FORMAT.md) - The open Cofounder Memory Format (CMF)
+- [Contributing](CONTRIBUTING.md) - Add skills, templates, and war stories
+- [Governance](GOVERNANCE.md) - How decisions get made
+- [Changelog](CHANGELOG.md) - What changed in v1.6.1
 
 ## License
 
