@@ -54,6 +54,10 @@ Shotgun turns your AI agent into something that acts like it owns half the compa
 - **Self-healing** - Learned skills that improve with use, plus a monthly checkup that audits memory, vault hygiene, git safety, and secret leaks.
 - **Portable** - Export your entire cofounder as a bundle, secrets excluded and verified. Import from Obsidian, Notion, or ChatGPT on day one.
 
+<p align="center">
+  <img src="assets/terminal2.gif" alt="Shotgun in the terminal" width="700">
+</p>
+
 ## How it works
 
 ```
@@ -106,6 +110,10 @@ General assistants like OpenClaw or Hermes Agent are excellent - always on, conn
 They win on 24/7 availability and channels. Shotgun wins on judgment, focus, and depth for one specific job: running a company of one.
 
 *(Different tool, same name: [shotgun.sh](https://github.com/shotgun-sh/shotgun) is a spec-writing CLI for AI coding agents — not a cofounder. They coexist fine: use it inside `workspace/` projects.)*
+
+<p align="center">
+  <img src="assets/terminal3.gif" alt="Shotgun in the terminal" width="700">
+</p>
 
 ## Philosophy
 

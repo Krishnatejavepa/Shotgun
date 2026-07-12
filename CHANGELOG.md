@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.6.2 (2026-07-12)
+
+README redesign. No functional changes.
+
+- Two more animated terminal demos (`assets/terminal2.gif`, `assets/terminal3.gif`) placed alongside the feature list and comparison table; existing `assets/terminal.gif` re-recorded.
+
 ## v1.6.1 (2026-07-11)
 
 README redesign. No functional changes.
